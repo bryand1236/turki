@@ -20,7 +20,7 @@ html{
 :root{
     /* Put your pattern image here (recommended: image/pattern.png) */
     --bg-pattern: url("image/bg-pattern.png");
-    --bg-pattern-size: cover;
+    --bg-pattern-size: contain;
     --bg-pattern-opacity: 0.9;
 }
 
@@ -156,7 +156,7 @@ a{
     padding-top: 0;
     padding-bottom: 0;
     font-size:22px;
-    margin-left: 70px;
+    margin-left: 60px;
 }
 
 .navbar-brand img{
@@ -165,7 +165,7 @@ a{
     object-fit: contain;
     display: block;
     left:18;
-    height: 70;
+    height: 51;
 }
 
 
@@ -327,9 +327,10 @@ h1{
     top: 20px;
     margin-left: 60px;
     margin-top: 30px;
-    padding: 20px 30px;
-    font-size: 20px;
-    text-align: left;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
     font-weight: 600;
     background-color: #7BC2FC;
     border: none;
@@ -344,8 +345,10 @@ h1{
     top: 20px;
     margin-left: 60px;
     margin-top: 30px;
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
     font-weight: 600;
     background-color: #6DA1E4;
     border: none;
@@ -360,8 +363,10 @@ h1{
     top: 20px;
     margin-left: 60px;
     margin-top: 30px;
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
     font-weight: 600;
     background-color: #5799CD;
     border: none;
@@ -376,8 +381,10 @@ h1{
     top: 20px;
     margin-left: 60px;
     margin-top: 30px;
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
     font-weight: 600;
     background-color: #E4926A;
     border: none;
@@ -882,6 +889,82 @@ h1{
     transform: translateY(-20px)
 }
 
+.grid-container-about-item{
+    position: relative;
+}
+
+.about-glassbox{
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(140deg, rgba(0, 0, 0, 0.55) 0%, rgba(15, 15, 15, 0.35) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.about-glassbox-text{
+    min-width: 0;
+    max-width: 320px;
+}
+
+.about-glassbox-title{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-glassbox-desc{
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.35;
+    opacity: 0.9;
+}
+
+.about-glassbox-arrow{
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.08);
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.grid-container-about a:hover .about-glassbox-arrow{
+    transform: translateX(2px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.about-glassbox--large{
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 18px 18px;
+}
+
+.about-glassbox--large .about-glassbox-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+.about-glassbox--large .about-glassbox-text{
+    max-width: 280px;
+}
+
 .big-image-right{
     height: 140vh;
     width: 400px;
@@ -893,6 +976,7 @@ h1{
     background-image: url(image/home/pplg.png);
     background-size: cover;
     border-radius: 20px;
+    position: relative;
 
     transition: all 0.5s ease;
 }
@@ -1733,6 +1817,17 @@ h1{
     .grid-container-about img{
         width: 100%;
         height: auto;
+    }
+
+    .about-glassbox{
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 12px;
+    }
+
+    .about-glassbox-desc{
+        display: none;
     }
 
     /* culture */
