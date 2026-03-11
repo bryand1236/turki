@@ -324,11 +324,12 @@ h1{
 }
 
 .explore{
-    top: 400px;
+    top: 20px;
     margin-left: 60px;
     margin-top: 30px;
     padding: 20px 30px;
     font-size: 20px;
+    text-align: left;
     font-weight: 600;
     background-color: #7BC2FC;
     border: none;
@@ -340,7 +341,7 @@ h1{
 }
 
 .explore-2{
-    top: 400px;
+    top: 20px;
     margin-left: 60px;
     margin-top: 30px;
     padding: 20px 30px;
@@ -356,7 +357,7 @@ h1{
 }
 
 .explore-3{
-    top: 400px;
+    top: 20px;
     margin-left: 60px;
     margin-top: 30px;
     padding: 20px 30px;
@@ -372,7 +373,7 @@ h1{
 }
 
 .explore-4{
-    top: 400px;
+    top: 20px;
     margin-left: 60px;
     margin-top: 30px;
     padding: 20px 30px;
@@ -498,7 +499,7 @@ h1{
 .section-home-1{
     height: 100vh;
     width: 100%;
-    background-color: white;
+
     position: relative;
 }
 
@@ -627,7 +628,6 @@ h1{
 .section-home-2{
     height:140vh;
     width:100%;
-    background-color:white;
     position: relative;
 }
 

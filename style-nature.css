@@ -52,6 +52,13 @@
     font-size: 18px;
 }
 
+.footer{
+    background-color: #063E4B;
+    height: 50vh;
+
+}
+
+
 .dropdown-item:hover{
     color: white;
     font-size: 18px;
@@ -480,6 +487,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
+}
+
+.ba-pane{
+    display: none;
+    width: 100%;
+    scroll-margin-top: calc(var(--navbar-height, 72px) + 24px);
+}
+
+.ba-pane.is-active{
+    display: block;
 }
 
 .ba-profile-card{
