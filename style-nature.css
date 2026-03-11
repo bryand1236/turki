@@ -1,0 +1,814 @@
+.navbar-dark{
+    background-color: #063E4B;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* hide navbar by translating upward and fading */
+.navbar-hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+
+.navbar-brand{
+    font-size:22px;
+    margin-left: 70px;
+}
+.nav-link{
+    color: #aeaeae;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    border-bottom: #aeaeae transparent 0.5px;
+    display: inline-block;
+    
+}
+
+
+.nav-link:hover{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.nav-link.active{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.navbar-nav{
+    gap: 20px;
+}
+
+.dropdown-menu{
+    background-color: rgb(6, 62, 75);
+    text-align: center;
+    margin-left: -40px;
+
+}
+
+.dropdown-item{
+    color: white;
+    font-size: 18px;
+}
+
+.dropdown-item:hover{
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.dropdown-item-description{
+    color: #aeaeae;
+    font-size: 10px;
+    max-width:100px;
+    justify-content:center;
+    margin: auto;
+}
+
+/* bagian nature */
+
+.section-nature-1{
+    height:110vh;
+    padding-left:5vh;
+    padding-right:5vh;
+    padding-top:10vh;
+}
+
+.section-nature-2{
+    height:110vh;
+    padding-left:5vh;
+    padding-right:5vh;
+}
+
+.section-nature-3{
+    height:105vh;
+    padding-left:5vh;
+    padding-right:5vh;
+}
+
+.section-nature-4{
+    height:100vh;
+    padding-left:5vh;
+    padding-right:5vh
+}
+
+.section-nature-5{
+    height:270vh;
+    padding: left 5px;
+    padding-right: 5px;
+}
+
+.title-nature{
+    font-size: 40px;
+    color:#063E4B;
+    font-weight: bold;
+    max-width: 500px;
+}
+
+.description-nature{
+    font-size: 16px;
+    color: black;
+    max-width: 600px;
+}
+
+.text-nature-container{
+    display: flex;
+    flex-direction: column;
+    margin-top:15vh;
+}
+
+.nature-image-container{
+    display: flex;
+    margin-top: 10vh;
+    gap:30px;
+    align-items: bottom;
+    margin-left: 10vh;
+}
+
+.nature-image1{
+    height:400px;
+    width:300px;
+    margin-top: auto;
+    border-top-left-radius: 80px;
+    border-top-right-radius:20px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.nature-image2{
+    height:480px;
+    width:320px;
+    border-top-left-radius: 80px;
+    border-top-right-radius:20px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.blue-box-1{
+    height: 500px;
+    width:400px;
+    background-color: #063E4B;
+    border-top-left-radius: 20px;
+    border-top-right-radius:80px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.blue-box-2{
+    height: 500px;
+    width:400px;
+    background-color: #063E4B;
+    border-top-left-radius: 80px;
+    border-top-right-radius:80px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.blue-box-3{
+    height: 500px;
+    width:400px;
+    background-color: #063E4B;
+    border-top-left-radius: 80px;
+    border-top-right-radius:20px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.blue-box-1{
+    padding-left: 5vh;
+    padding-right:5vh;
+}
+
+.blue-box-2{
+    padding-left: 5vh;
+    padding-right:5vh;
+}
+
+.blue-box-3{
+    padding-left: 5vh;
+    padding-right:5vh;
+}
+
+.blue-box-icon{
+    height: 70px;
+    width: 70px;
+    align-items: center;
+    margin-top:30px;
+    margin-bottom: 10px;
+}
+
+.blue-box-title{
+    margin-top:10px;
+    color: white;
+    font-size:22px;
+    font-weight: bold;
+}
+
+.blue-box-list{
+    text-align: left;
+    color:white;
+}
+
+.bottom-text-section-2{
+    color:black;
+    font-size:32px;
+    display:flex;
+    justify-content:center;
+    margin-top:50px
+}
+
+.letak-wilayah-container{
+    height:95vh;
+    width:100%;
+    background-image:url(image/nature/letak-wilayah.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding-left:10vh;
+    padding-right:10vh;
+    padding-top: 10vh;
+    border-radius: 20px;
+}
+
+.wilayah-title{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.glass-box{
+    margin-left:30vh;
+    margin-top:-10px;
+    padding-left:2vh;
+    padding-top:3vh;
+    padding-bottom:1vh;
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px); 
+    border-radius:20px;
+    justify-content:center
+}
+
+.wilayah-description{
+    color:black;
+    font-size:16px
+}
+.letak-box-container{
+    gap:100px
+}
+.letak-box1{
+    width:300px;
+    height:370px;
+    background-color:white;
+    border-radius:20px;
+    border-top-left-radius:80px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:3vh;
+    padding-left:4vh;
+    padding-right:4vh
+}
+
+.letak-box2{
+    width:300px;
+    height:370px;
+    background-color:white;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:3vh;
+    padding-left:4vh;
+    padding-right:4vh
+}
+
+.letak-box3{
+    width:300px;
+    height:370px;
+    background-color:white;
+    border-radius:20px;
+    border-top-right-radius:80px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:3vh;
+    padding-left:4vh;
+    padding-right:4vh
+}
+
+.letak-box1 img{
+    height:70px;
+    margin-bottom: 10px;
+}
+    
+.letak-box2 img{
+    height:70px;
+    margin-bottom: 10px;
+}
+
+.letak-box3 img{
+    height:70px;
+    margin-bottom: 10px;
+}
+
+.letak-title{
+    color:black;
+    font-size:24;
+    font-weight:bold;
+}
+
+.letak-description{
+    color:black;
+    font-size: 16px;
+}
+
+.bentang-alam-left-box{
+    height:550px;
+    width:400px;
+    position:absolute;
+    border-radius:20px;
+    z-index:1;
+
+}
+
+.bentang-alam{
+    height:550px;
+    width:450px;
+    z-index:2;
+    margin-left:50px;
+    margin-top:50px;
+    position:absolute;
+    border-radius:20px;
+}
+
+.bentang-alam-title{
+    color:#063E4B;
+    font-size:40px;
+    font-weight:bold;
+    margin-left:85vh;
+    margin-top:10vh
+}
+
+.bentang-alam-description{
+    color:black;
+    font-size:20px;
+    max-width:500px;
+    margin-left:85vh;
+}
+
+.bentang-alam-button{
+    margin-left:0vh;
+    margin-top: 2vh;
+    background-color: #063E4B;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    height:60px;
+    width: 200px;
+}
+/* bagian bentang alam */
+.section-bentang-alam-2{
+    height:100vh;
+    background-color: white;
+    padding-left:5vh ;
+    padding-right: 5vh;
+}
+
+/* bentang-alam section 3: pills + profile cards (match contoh) */
+.section-bentang-alam-3{
+    --ba-accent: #8B0000;
+    min-height: 100vh;
+    height: auto;
+    padding-top: calc(var(--navbar-height, 72px) + 44px);
+    padding-bottom: 64px;
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+}
+
+.ba-team-wrap{
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.ba-team-banner{
+    position: relative;
+    width: 100%;
+    height: clamp(240px, 34vw, 340px);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.ba-team-banner-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.05) contrast(1.02);
+}
+
+.ba-team-banner::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.48));
+    pointer-events: none;
+}
+
+.ba-team-tabs{
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: calc(100% - 24px);
+}
+
+.ba-tab{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.82);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.ba-tab:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.ba-tab.is-active{
+    background: var(--ba-accent);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.ba-tab-icon{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.ba-team-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.ba-profile-card{
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 18px 16px 16px;
+    text-align: center;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.14);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.ba-profile-card:hover{
+    transform: translateY(-8px);
+    border-color: rgba(0, 0, 0, 0.14);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.2);
+}
+
+.ba-avatar{
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--ba-accent);
+    display: block;
+    margin: 6px auto 10px;
+    background: #ffffff;
+}
+
+.ba-name{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.82);
+}
+
+.ba-badge{
+    display: inline-block;
+    margin: 10px auto 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ba-role{
+    margin: 0;
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: var(--ba-accent);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+/* bentang-alam showcase (2 cards on 1 background) */
+.section-bentang-alam-2.bentang-alam-cards{
+    min-height: 100vh;
+    height: auto;
+    padding-top: calc(var(--navbar-height, 72px) + 44px);
+    padding-bottom: 60px;
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+    background: url("image/nature/bg-bentang-alam-2.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.bentang-alam-cards-wrap{
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(18px, 2.5vw, 28px);
+    align-items: center;
+}
+
+.bentang-card{
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+    padding: 22px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bentang-card-title{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.62);
+}
+
+.bentang-card-text{
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.bentang-card-image{
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.bentang-card--gunung{
+    align-self: start;
+}
+
+.bentang-card--bukit{
+    align-self: center;
+    padding-top: 26px;
+    padding-bottom: 22px;
+}
+
+@media (max-width: 992px){
+    .bentang-alam-cards-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    .bentang-card-image{
+        height: 220px;
+    }
+
+    .ba-team-banner{
+        height: clamp(220px, 50vw, 320px);
+    }
+}
+
+.bentang-alam-flower-container{
+    display: flex;
+    margin-top: 0px;
+    gap:10px;
+    align-items: bottom;
+}
+.bentang-image1{
+    height: 300px;
+    width:300px;
+    border-top-left-radius: 0px;
+    border-top-right-radius:80px;
+    border-bottom-left-radius:80px;
+    border-bottom-right-radius:0px;
+}
+
+.bentang-image2{
+    height: 300px;
+    width:300px;
+    border-top-left-radius: 80px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:80px;
+}
+
+.bentang-image3{
+    height: 300px;
+    width:300px;
+    border-top-left-radius: 80px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:80px;
+}
+
+.bentang-image4{
+    height: 300px;
+    width:300px;
+    border-top-left-radius: 0px;
+    border-top-right-radius:80px;
+    border-bottom-left-radius:80px;
+    border-bottom-right-radius:0px;
+}
+
+.bentang-alam-description-box-right{
+    background-color: #063E4B;
+    width: 750px;
+    height:450px;
+    margin-top: 50px;
+    margin-left:350px;
+    position: relative;
+    z-index: 2;
+    border-radius: 30px;
+    padding: 5vh;
+    padding-top:5vh
+}
+
+.bentang-alam-box-title{
+    color:white;
+    font-size: 48px;
+    font-weight:bold;
+    max-width: 400px;
+    text-align: left;
+}
+
+.bentang-alam-divider{
+    background-color: white;
+    height:2px;
+    width:250px
+}
+
+.bentang-alam-box-description{
+    color:white;
+    line-height: 1.5;
+}
+
+.bentang-alam-right-box{
+    height:550px;
+    width:400px;
+    position:absolute;
+    border-radius:20px;
+    z-index:1;
+    right:5vh;
+}
+
+.bentang-alam-description-box-left{
+    background-color: #063E4B;
+    width: 750px;
+    height:450px;
+    margin-top: 50px;
+    margin-left:200px;
+    position: relative;
+    z-index: 2;
+    border-radius: 30px;
+    padding: 5vh;
+    padding-top:5vh
+}
+
+.daratperairan-title{
+    color:#063E4B;
+    font-size:30px;
+    font-weight:bold;
+    margin-top:10vh;
+}
+
+.daratperairan-image{
+    height:1500px;
+    width: 90%;
+    border-radius:30px
+}
+
+@media (max-width: 992px){
+    .section-nature-1,
+    .section-nature-2,
+    .section-nature-3,
+    .section-nature-4,
+    .section-nature-5{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .title-nature{
+        font-size: clamp(28px, 6vw, 40px);
+        max-width: 100%;
+    }
+
+    .description-nature{
+        max-width: 100%;
+    }
+
+    .text-nature-container{
+        margin-top: 6vh;
+    }
+
+    .nature-image-container{
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 4vh;
+        align-items: center;
+    }
+
+    .nature-image1,
+    .nature-image2{
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+    }
+
+    .blue-box-1,
+    .blue-box-2,
+    .blue-box-3{
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        padding-bottom: 24px;
+    }
+
+    .bottom-text-section-2{
+        font-size: clamp(20px, 4.5vw, 32px);
+        text-align: center;
+    }
+
+    .letak-wilayah-container{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        padding-top: 6vh;
+        padding-bottom: 6vh;
+        background-position: center;
+    }
+
+    .glass-box{
+        margin-left: 0;
+        margin-top: 18px;
+        padding: 18px;
+    }
+
+    .letak-box-container{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .letak-box1,
+    .letak-box2,
+    .letak-box3{
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+    }
+
+    .daratperairan-image{
+        height: auto;
+        width: 100%;
+    }
+}

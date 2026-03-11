@@ -1,0 +1,259 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>website turki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Benne&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="image/navbar.png" alt="Logo" class="d-inline-block align-text-bottom" >
+      Turkiye
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link"href="home.html">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Informasi
+          </a>
+          <ul class="dropdown-menu dropdown-menu-center">
+            <li><a class="dropdown-item" href="nyam.html">Kuliner Turki</a></li>
+            <p class ="dropdown-item-description">Jelajahi Makanan & Minuman Turki</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="biography.html">Orang Turki</a></li>
+            <p class ="dropdown-item-description">Tokoh dengan peran penting di sejarah Turki</p>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="global-values.html">Global Values</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="destinasi/destinasi.html">Destinasi</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang Kami
+          </a>
+          <ul class="dropdown-menu ms-1">
+            <li><a class="dropdown-item" href="about/about-pplg.html">PPLG</a></li>
+            <p class ="dropdown-item-description">tentang jurusan sini</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="about/about-dkv.html">DKV</a></li>
+            <p class ="dropdown-item-description">tentang jurusan sini</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="about/about-kuliner.html">Kuliner</a></li>
+            <p class ="dropdown-item-description">tentang jurusan sini</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="about/about-perhotelan.html">Perhotelan</a></li>
+            <p class ="dropdown-item-description">tentang jurusan sini</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="about/about-akuntansi.html">Akuntansi</a></li>
+            <p class ="dropdown-item-description">tentang jurusan sini</p>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<section id="hagia-sophia" class="section sec-index">
+  <div class="hero-glass">
+    <div class="title-container">
+      <li class="title">Hagia Sophia</li>
+    </div>
+    <li class="description">Hagia Sophia adalah bangunan ikonik di Istanbul yang pernah berfungsi sebagai gereja, masjid, museum, dan sejak 2020 kembali menjadi masjid, sehingga menjadi simbol penting perubahan agama dan budaya di Turki.</li>
+  </div>
+  <a href="home.html">
+  <button class="explore">Jelajahi Sekarang</button>
+  </a>
+  <div class="carousel-container" id="carouselContainer">
+    <div class="carousel-wrapper" id="carouselWrapper">
+      <img class="image" src="image/hagia.avif" alt="">
+      <img class="image2" src="image/cappadocia.avif" alt="">
+      <img class="image2" src="image/topkapi.jpg" alt="">
+      <img class="image2" src="image/ephesus.avif" alt="">
+    </div>
+  </div>
+
+<script>
+   let currentSlide = 0;
+  const carouselContainer = document.getElementById('carouselContainer');
+  const carouselWrapper = document.getElementById('carouselWrapper');
+  
+  // PERBAIKAN 1: Tambahkan titik (.) untuk querySelector class
+  const exploreBtn = document.querySelector('.explore'); 
+  const classes = ['explore', 'explore-2', 'explore-3', 'explore-4']; 
+
+  function updateButtonClass() {
+    // PERBAIKAN 2: Hapus semua class lama dulu agar tidak tumpuk
+    exploreBtn.classList.remove(...classes);
+    
+    // PERBAIKAN 3: Tambah class sesuai index slide saat ini
+    if (classes[currentSlide]) {
+      exploreBtn.classList.add(classes[currentSlide]);
+    }
+  }
+
+  carouselContainer.addEventListener('click', (e) => {
+    const rect = carouselContainer.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const containerWidth = rect.width;
+    const images = carouselWrapper.querySelectorAll('img');
+    const maxSlide = images.length - 1;
+
+    if (clickX > containerWidth / 1.2) {
+      currentSlide = Math.min(maxSlide, currentSlide + 1);
+    } else {
+      currentSlide = Math.max(0, currentSlide - 1);
+    }
+
+    carouselWrapper.style.transition = 'transform 0.4s ease-out';
+    carouselWrapper.style.transform = `translateX(${currentSlide * -330}px)`; 
+    
+    updateActiveImage();
+    updateButtonClass(); // Panggil fungsi ganti class tombol
+  });
+
+  function updateActiveImage() {
+    const images = carouselWrapper.querySelectorAll('img');
+    images.forEach((img, index) => {
+      img.classList.remove('active');
+      if (index === currentSlide) img.classList.add('active');
+    });
+    
+    const imageSources = ['image/hagia.avif', 'image/cappadocia.avif', 'image/topkapi.jpg', 'image/ephesus.avif'];
+    const slideTexts = [
+      { title: 'Hagia Sophia', desc: 'Hagia Sophia adalah bangunan ikonik di Istanbul yang pernah berfungsi sebagai gereja, masjid, museum, dan sejak 2020 kembali menjadi masjid, sehingga menjadi simbol penting perubahan agama dan budaya di Turki.' },
+      { title: 'Cappadocia', desc: 'Cappadocia (Kapadokia) adalah wilayah bersejarah di Anatolia Tengah, Turki, yang terkenal dengan bentang alam geologis unik hasil erupsi gunung berapi kuno.' },
+      { title: 'Topkapi Palace', desc: 'Istana Topkapi (Topkapı Sarayı) adalah kompleks istana megah di Istanbul, Turki, yang berfungsi sebagai pusat pemerintahan dan kediaman resmi Sultan Utsmaniyah (Ottoman) selama hampir 400 tahun (1465–1856). ' },
+      { title: 'Ephesus', desc: 'Efesus (Ephesus) adalah kota pelabuhan Yunani kuno yang sangat penting di pesisir Ionia (sekarang Turki barat dekat Selçuk), yang berkembang pesat di bawah Kekaisaran Romawi. ' }
+    ];
+
+    const section = document.getElementById('hagia-sophia');
+    const titleEl = section.querySelector('.title');
+    const descEl = section.querySelector('.description');
+
+    if (titleEl && descEl && slideTexts[currentSlide]) {
+      descEl.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+      descEl.style.opacity = "0";
+      descEl.style.transform = "translateY(30px)";
+
+      exploreBtn.style.transition = "opacity 0.4s ease, transform 0.6s ease";
+      exploreBtn.style.opacity = "0";
+      exploreBtn.style.transform = "translateY(0px)";
+
+      titleEl.classList.remove('exit', 'enter');
+      void titleEl.offsetWidth;
+      titleEl.classList.add('exit');
+      
+      setTimeout(() => {
+        titleEl.innerText = slideTexts[currentSlide].title;
+        descEl.innerText = slideTexts[currentSlide].desc;
+        titleEl.classList.remove('exit');
+        titleEl.classList.add('enter');
+        descEl.style.opacity = "1";
+        descEl.style.transform = "translateY(0px)";
+
+        exploreBtn.style.opacity = "1";
+        exploreBtn.style.transform = "translateY(0px)";
+      }, 400);
+    }
+    section.style.transition = "background-image 0.4s ease-in";
+    section.style.backgroundImage = `url(${imageSources[currentSlide]})`;
+  }
+
+  // Inisialisasi awal
+  updateActiveImage();
+  updateButtonClass();
+</script>
+</section>
+
+
+
+<script>
+// hide navbar when scrolling down, show when scrolling up
+(function(){
+  let lastScroll = window.pageYOffset;
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => {
+    const current = window.pageYOffset;
+    if (current > lastScroll && current > 50) {
+      nav.classList.add('navbar-hidden');
+    } else {
+      nav.classList.remove('navbar-hidden');
+    }
+    lastScroll = current;
+  });
+})();
+</script>
+
+<!-- <footer class="footer">
+  <div class="d-flex row-1">
+    <div class="d-flex flex-column">
+      <div class="d-flex">
+      <img style="height: 70px; width: 70px;" src="image/footer-item-2.png" alt="">
+      <p class="footer-title">Türkiye</p>
+      </div>
+      <p class="footer-title-description">Rasakan perpaduan Timur dan Barat dalam keindahan Turki.</p>
+    </div>
+      <div class="ms-5 d-flex gap-5">
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">INFORMASI</p>
+      
+      <a href="home.html" class="footer-tab-items">Beranda</a>
+      <a href="culture.html" class="footer-tab-items">Budaya</a>
+      <a href="nature.html" class="footer-tab-items">Alam</a>
+      <a href="global-values.html" class="footer-tab-items">Global Values</a>
+      <a href="destinasi/destinasi.html" class="footer-tab-items">Destinasi</a>
+      </div>
+
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">TENTANG KAMI</p>
+      <a href="about/about-pplg.html" class="footer-tab-items">PPLG</a>
+      <a href="about/about-dkv.html" class="footer-tab-items">DKV</a>
+      <a href="about/about-kuliner.html" class="footer-tab-items">Kuliner</a>
+      <a href="about/about-perhotelan.html" class="footer-tab-items">Perhotelan</a>
+      <a href="about/about-akuntansi.html" class="footer-tab-items">Akuntansi</a>
+      </div>
+    </div>
+
+    <div class="footer-right-container">
+      <img class="smk-logo" src="image/footer-item-1.png" alt="">
+      <div class="d-flex flex-column">
+      <p class="footer-title-description ms-2">PROJEK SEKOLAH</p>
+      <p class="footer-title-description-metland ms-2">SMK METLAND</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="line-footer justify-content-center align-items-center"></div>
+  <p class="footer-title-description">&copy;2026 BRYAND LIAW SAN</p>
+</footer> -->
+
+</body>
+
+
+  
+
+
+
+
