@@ -1229,7 +1229,7 @@ h1{
     color:black;
     text-align:center;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 5px;
     font-weight: bold;
 }
@@ -1271,6 +1271,20 @@ h1{
     font-family: "poppins", "serif";
     text-align: left;
     margin-top: 30px;
+}
+
+.food-divider1{
+    height:100%;
+    width: 2px;
+    background-color: rgba(189, 9, 9, 0.5);
+    margin-left: 450 ;
+}
+
+.food-divider2{
+    height:100%;
+    width: 2px;
+    background-color: rgba(189, 9, 9, 0.5);
+    margin-left: 378 ;
 }
 
 .red-food-box{
@@ -1322,8 +1336,7 @@ h1{
     width: 50px;
     background-image: url(image/placeholder.jpeg);
     margin-top:60vh;
-    margin-right: 10vh;
-    margin-left: auto;
+    margin-left: 350px;
 }
 
 .tradisi-budaya{
