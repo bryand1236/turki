@@ -1,0 +1,1227 @@
+.section-kuliner-1{
+    background-color: #ffffff;
+    padding: 12vh 5vh 5vh;
+    height: 100vh;
+}
+
+.section-kuliner-2{
+    background-color: #ffffff;
+    padding: 4vh 5vh 10vh;
+    padding-top:10vh;
+    height: 100vh;
+}
+
+.kuliner-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.kuliner-head{
+    max-width: 760px;
+}
+
+.kuliner-title{
+    margin-top: 20vh;
+    color: #8b0000;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.kuliner-description{
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: black;
+    max-width: 600px;
+}
+
+.nyam-top-image{
+    height:550px;
+    width: 500px;
+    border-bottom-left-radius: 300px;
+    margin-left: 100px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+.kuliner-subtitle{
+    margin: 0;
+    color: #8b0000;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.kuliner-subdescription{
+    margin: 14px auto 30px;
+    max-width: 1000px;
+    text-align: center;
+    font-size: 18px;
+    color: #222;
+}
+
+.kuliner-card-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 100px;
+}
+
+.kuliner-card{
+    background: #FDF5E6;
+    border: 4px solid #a30000;
+    padding: 16px;
+    height: 300px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kuliner-card-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: -70px;
+}
+
+.kuliner-card-title{
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.kuliner-card-text{
+    margin-top: 100px;
+    font-size: 15px;
+    color: black;
+    line-height: 1.5;
+}
+
+.kuliner-card-link{
+    margin-top: auto;
+    padding-top: 14px;
+    text-align: right;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+}
+
+.kuliner-card-link::after{
+    content: " \2192";
+}
+
+@media (max-width: 992px){
+    .section-kuliner-1,
+    .section-kuliner-2{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .kuliner-title{
+        margin-top: 4vh;
+        font-size: clamp(32px, 6vw, 48px);
+    }
+
+    .kuliner-description{
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .nyam-top-image{
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 24px;
+        border-bottom-left-radius: 180px;
+        display: block;
+    }
+
+    .kuliner-subtitle{
+        font-size: clamp(28px, 6vw, 44px);
+    }
+
+    .kuliner-card-grid{
+        grid-template-columns: 1fr;
+        margin-top: 48px;
+    }
+
+    .kuliner-card{
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        min-height: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+    .kuliner-card-image{
+        position: static;
+        margin: -60px auto 0;
+        display: block;
+    }
+
+    .kuliner-card-text{
+        margin-top: 16px;
+    }
+}
+
+.kuliner-feature-grid{
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.kuliner-feature{
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    display: grid;
+    grid-template-rows: 190px 1fr;
+}
+
+.kuliner-feature img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kuliner-feature-body{
+    padding: 16px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kuliner-feature-title{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #8b0000;
+}
+
+.kuliner-feature-text{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #222;
+    text-align: justify;
+}
+
+.kuliner-feature-link{
+    margin-top: auto;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.kuliner-feature-link::after{
+    content: "→";
+}
+
+.kuliner-facts{
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.kuliner-fact{
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    padding: 12px 12px 10px;
+}
+
+.kuliner-fact-k{
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #555;
+}
+
+.kuliner-fact-v{
+    margin: 6px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+}
+
+.kuliner-meta{
+    margin: 16px 0 0;
+}
+
+.kuliner-meta-row{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.kuliner-meta-row:last-child{
+    border-bottom: 0;
+}
+
+.kuliner-meta dt{
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #555;
+}
+
+.kuliner-meta dd{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    text-align: right;
+}
+
+
+.section-hunkar-hero{
+    min-height: 86vh;
+    background-color: #ffffff;
+    padding: 12vh 4vh 4vh;
+}
+
+.hunkar-top-image{
+    --kuliner-hero-image: url("../image/kuliner/bg-kuliner-3.png");
+    height: 68vh;
+    min-height: 460px;
+    width: 100%;
+    border-radius: 24px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+        var(--kuliner-hero-image) center/cover no-repeat;
+    display: flex;
+}
+
+
+
+.hunkar-glass-box{
+    margin-top: 72px;
+    margin-left: 12px;
+    width: 320px;
+    height: 320px;
+}
+
+.arrow-paket{
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    margin-left: 18px;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+.arrow-paket::before{
+    content: "\2190";
+    font-size: 18px;
+    line-height: 1;
+}
+
+.glass-box{
+    background: rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 20px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-box p{
+    color: #fff;
+}
+
+.hunkar-hero-title{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 14px;
+}
+
+.glass-bubble{
+    margin-left: auto;
+}
+
+.section-hunkar-2{
+    background-color: #ffffff;
+    padding: 2vh 4vh 6vh;
+}
+
+.hunkar-detail-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.hunkar-history-row{
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.hunkar-history-image{
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 24px;
+    flex-shrink: 0;
+}
+
+.hunkar-history-content{
+    max-width: 640px;
+}
+
+.hunkar-history-title,
+.hunkar-culture-title{
+    margin: 0 0 10px;
+    color: #8b0000;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hunkar-history-text,
+.hunkar-culture-text{
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.45;
+    color: #222;
+}
+
+.hunkar-bottom-text{
+    margin: 26px 0 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.section-hunkar-tech{
+    background-color: #ffffff;
+    padding: 0 4vh 6vh;
+}
+
+.hunkar-tech-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.hunkar-tech-card{
+    width: 100%;
+    height: 360px;
+    border-radius: 22px;
+    background-image: url(../image/kuliner/bg-kuliner-3.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    border: 1px solid #d7d7d7;
+}
+
+.hunkar-tech-panel{
+    width: 42%;
+    min-width: 340px;
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hunkar-tech-title{
+    margin: 0 0 10px;
+    font-size: 32px;
+    color: #111;
+    font-weight: 700;
+    line-height: 1.06;
+}
+
+.hunkar-tabel{
+    height:400px;
+
+}
+
+.tabel{
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.hunkar-tech-text{
+    margin: 0;
+    font-size: 17px;
+    color: #222;
+    line-height: 1.4;
+}
+
+.section-hunkar-3{
+    background-color: #efe8d6;
+    padding: 6vh 0;
+}
+
+.hunkar-culture-wrap{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 5vh;
+}
+
+.hunkar-culture-card{
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.hunkar-culture-image{
+    width: 300px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.hunkar-culture-content{
+    max-width: 640px;
+}
+
+.section-hunkar-4{
+    background:
+        radial-gradient(1200px 600px at 18% 0%, rgba(139, 0, 0, 0.10) 0%, rgba(255, 255, 255, 0) 60%),
+        linear-gradient(180deg, #ffffff 0%, #fbf6ee 100%);
+    padding: 6vh 4vh 8vh;
+}
+
+.hunkar-bahan-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 24px;
+    padding: 28px 22px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(253, 245, 230, 0.88) 100%);
+    border: 1px solid rgba(139, 0, 0, 0.10);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.hunkar-bahan-wrap::before{
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(139, 0, 0, 0.11) 0%, rgba(139, 0, 0, 0) 55%),
+        radial-gradient(circle at 88% 30%, rgba(255, 174, 75, 0.10) 0%, rgba(255, 174, 75, 0) 55%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hunkar-bahan-wrap > *{
+    position: relative;
+    z-index: 1;
+}
+
+.hunkar-bahan-title{
+    margin: 0 0 28px;
+    text-align: center;
+    color: #8b0000;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.hunkar-bahan-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.hunkar-bahan-card{
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 14px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    min-height: 0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hunkar-bahan-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+}
+
+.hunkar-bahan-card img{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid #a30000;
+}
+
+.hunkar-bahan-card p{
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.3;
+}
+
+.section-hunkar-5{
+    background-color: #ffffff;
+    padding: 6vh 4vh 10vh;
+}
+
+.hunkar-filosofi-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.hunkar-filosofi-title{
+    margin: 0 0 12px;
+    font-size: 46px;
+    font-weight: 700;
+    color: #8b0000;
+}
+
+.hunkar-filosofi-intro{
+    margin: 0 0 34px;
+    font-size: 16px;
+    color: #222;
+    line-height: 1.45;
+    max-width: 1120px;
+}
+
+.hunkar-filosofi-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 24px;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.hunkar-filosofi-card{
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid #d3d3d3;
+    background-color: #f8f8f8;
+    min-height: 240px;
+    padding: 16px 16px 16px 46px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hunkar-filosofi-card.is-red{
+    background-color: #a40000;
+    border-color: #a40000;
+}
+
+.hunkar-filosofi-card img{
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    left: -16px;
+    top: 20px;
+}
+
+.hunkar-filosofi-card:not(.is-red) img{
+    border-color: #a40000;
+}
+
+.hunkar-filosofi-card-title{
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8b0000;
+    line-height: 1.1;
+}
+
+.hunkar-filosofi-card-text{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+    text-align: justify;
+}
+
+.hunkar-filosofi-card.is-red .hunkar-filosofi-card-title,
+.hunkar-filosofi-card.is-red .hunkar-filosofi-card-text{
+    color: #ffffff;
+}
+
+.hunkar-filosofi-grid .hunkar-filosofi-card:nth-child(even){
+    margin-top: 26px;
+}
+
+.section-hunkar-6{
+    background-color: #ffffff;
+    padding: 7vh 4vh 9vh;
+}
+
+.hunkar-tools-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.hunkar-tools-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hunkar-tool-img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+}
+
+.hunkar-tool-img-1{
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.hunkar-tool-img-2{
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+}
+
+.hunkar-tool-img-3{
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+}
+
+.hunkar-tool-img-4{
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.hunkar-tools-content{
+    padding-left: 8px;
+}
+
+.hunkar-tools-title{
+    margin: 0 0 16px;
+    font-size: 46px;
+    color: #8b0000;
+    font-weight: 700;
+}
+
+.hunkar-tools-list{
+    margin: 0;
+    padding-left: 24px;
+    color: #111;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section-hunkar-7{
+    background-color: #ffffff;
+    padding: 6vh 4vh 10vh;
+}
+
+.hunkar-step-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.hunkar-step-card{
+    background-color: #FDF5E6;
+    border: 3px solid #a30000;
+    border-radius: 24px;
+    padding: 38px 16px 18px;
+    position: relative;
+    min-height: 560px;
+    width: 100%;
+}
+
+.hunkar-step-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60px;
+}
+
+.hunkar-step-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 0 8px 12px;
+}
+
+.hunkar-step-kicker{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8b0000;
+    line-height: 1.05;
+    text-align: center;
+    max-width: 135px;
+    width: 135px;
+}
+
+.hunkar-step-title{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8b0000;
+    line-height: 1.08;
+    text-align: right;
+    margin-left: auto;
+    padding-top: 2px;
+    max-width: 200px;
+}
+
+.hunkar-step-list{
+    margin: 0;
+    padding-left: 20px;
+    margin-top: 40px;
+    color: #111;
+    font-size: 16px;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.section-hunkar-8{
+    background-color: #ffffff;
+    padding: 6vh 4vh 10vh;
+}
+
+.hunkar-table-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.hunkar-table-image{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.kuliner-nutrition-title{
+    margin: 0;
+    font-size: 44px;
+    font-weight: 700;
+    color: #8b0000;
+    text-align: center;
+}
+
+.kuliner-nutrition-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.kuliner-nutrition-card{
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    padding: 14px 14px 12px;
+    text-align: center;
+}
+
+.kuliner-nutrition-k{
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #444;
+}
+
+.kuliner-nutrition-v{
+    margin: 6px 0 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+}
+
+.kuliner-nutrition-note{
+    margin: 6px auto 0;
+    max-width: 860px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+}
+
+.sup-cook-wrap{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.sup-cook-card{
+    position: relative;
+    background-color: #FDF5E6;
+    border: 3px solid #a30000;
+    border-radius: 22px;
+    padding: 42px 30px 30px;
+}
+
+.sup-cook-image{
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    top: -40px;
+    left: 60px;
+}
+
+.sup-cook-title{
+    margin: 0 0 18px 178px;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #8b0000;
+    text-align: left;
+}
+
+.sup-cook-list{
+    margin: 0;
+    padding-left: 24px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #111;
+    text-align: justify;
+}
+
+
+
+
+
+/* Sherbet page overrides (moved from inline styles) */
+.sherbet-history-section{
+    padding: 4vh 4vh 8vh;
+}
+
+.sherbet-history-row{
+    margin-top: 36px;
+    gap: 56px;
+}
+
+.sherbet-history-image{
+    width: 380px;
+    height: 300px;
+}
+
+.sherbet-history-content{
+    max-width: 720px;
+}
+
+.sherbet-history-text-2{
+    margin-top: 10px;
+}
+
+.sherbet-benefit-list{
+    padding-left: 24px;
+    margin: 0;
+}
+
+.sherbet-gizi-section{
+    padding-top: 2vh;
+}
+
+.sherbet-gizi-wrap{
+    display: grid;
+    grid-template-columns: 0.86fr 1.14fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.sherbet-gizi-card{
+    border: 3px solid #a30000;
+    border-radius: 22px;
+    background: #ffffff;
+    padding: 50px 28px 20px;
+    min-height: 508px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sherbet-gizi-title{
+    text-align: center;
+    margin: 0 0 0px;
+    color: #8b0000;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.sherbet-gizi-text{
+    text-align: left;
+    color: #111;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+    margin: 18px auto 0;
+
+}
+
+.sherbet-gizi-images{
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    column-gap: 10px;
+    row-gap: 12px;
+    align-content: center;
+    margin-left: auto;
+    justify-content: start;
+}
+
+.sherbet-gizi-img-1{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+}
+
+.sherbet-gizi-img-2{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.sherbet-gizi-img-3{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.sherbet-gizi-img-4{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+}
+
+@media (max-width: 900px){
+    .sherbet-gizi-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    .sherbet-gizi-card{
+        min-height: auto;
+    }
+}
+
+.sherbet-step-head{
+    justify-content: flex-start;
+}
+
+.sherbet-step-kicker{
+    max-width: none;
+    width: 170px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+@media (max-width: 992px){
+    .kuliner-feature-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .kuliner-facts{
+        grid-template-columns: 1fr;
+    }
+
+    .hunkar-glass-box{
+        width: min(520px, 92%);
+        height: auto;
+        margin-top: 54px;
+    }
+
+    .hunkar-top-image{
+        min-height: 520px;
+        height: auto;
+        padding-bottom: 22px;
+        flex-wrap: wrap;
+    }
+
+    .hunkar-history-row{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .hunkar-history-image{
+        width: 100%;
+        max-width: 620px;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .hunkar-tech-card{
+        height: auto;
+        min-height: 420px;
+        align-items: flex-end;
+    }
+
+    .hunkar-tech-panel{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hunkar-culture-card{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hunkar-culture-image{
+        width: 100%;
+        max-width: 620px;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .hunkar-bahan-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hunkar-filosofi-title{
+        font-size: clamp(30px, 6vw, 46px);
+    }
+
+    .hunkar-filosofi-grid{
+        grid-template-columns: 1fr;
+        max-width: 620px;
+    }
+
+    .hunkar-filosofi-grid .hunkar-filosofi-card:nth-child(even){
+        margin-top: 0;
+    }
+
+    .hunkar-tools-wrap{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .hunkar-tool-img{
+        width: min(42vw, 220px);
+        height: min(42vw, 220px);
+    }
+
+    .hunkar-tools-title{
+        font-size: clamp(30px, 6vw, 46px);
+    }
+
+    .hunkar-step-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    .hunkar-step-card{
+        min-height: auto;
+        padding-top: 86px;
+    }
+
+    .kuliner-nutrition-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 576px){
+    .section-hunkar-hero{
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .section-hunkar-2,
+    .section-hunkar-tech,
+    .section-hunkar-4,
+    .section-hunkar-5,
+    .section-hunkar-6,
+    .section-hunkar-7,
+    .section-hunkar-8{
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .hunkar-step-kicker,
+    .hunkar-step-title{
+        font-size: 22px;
+    }
+
+    .hunkar-bahan-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .kuliner-meta-row{
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .kuliner-meta dd{
+        text-align: left;
+    }
+
+    .sup-cook-title{
+        font-size: 34px;
+        margin-left: 150px;
+    }
+}

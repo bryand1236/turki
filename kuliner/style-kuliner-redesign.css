@@ -1,0 +1,615 @@
+:root{
+    --kuliner-radius-xl: 34px;
+    --kuliner-radius-lg: 24px;
+    --kuliner-radius-md: 16px;
+    --kuliner-shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.16);
+    --kuliner-shadow-card: 0 14px 38px rgba(0, 0, 0, 0.14);
+}
+
+/* Palette per page */
+.page-kuliner.page-hunkar{
+    --kuliner-accent: #7B1E3A; /* eggplant red */
+    --kuliner-accent-2: #D4A373; /* warm gold */
+    --kuliner-bg: #F6F2EA;
+    --kuliner-ink: #141414;
+}
+
+.page-kuliner.page-sherbet{
+    --kuliner-accent: #9B1B30; /* sherbet ruby */
+    --kuliner-accent-2: #0F766E; /* herbal teal */
+    --kuliner-bg: #FBF3F4;
+    --kuliner-ink: #121212;
+}
+
+.page-kuliner.page-sup{
+    --kuliner-accent: #B45309; /* lentil amber */
+    --kuliner-accent-2: #14532D; /* herb green */
+    --kuliner-bg: #FBF7F0;
+    --kuliner-ink: #141414;
+}
+
+/* Global page reset for the 3 detail pages only */
+.page-kuliner.page-hunkar,
+.page-kuliner.page-sherbet,
+.page-kuliner.page-sup{
+    background: radial-gradient(1200px 700px at 10% 0%, rgba(0, 0, 0, 0.04), transparent 60%),
+                radial-gradient(900px 600px at 90% 30%, rgba(0, 0, 0, 0.035), transparent 55%),
+                var(--kuliner-bg);
+    color: var(--kuliner-ink);
+}
+
+.page-kuliner.page-hunkar .section-hunkar-2,
+.page-kuliner.page-sherbet .section-hunkar-2,
+.page-kuliner.page-sup .section-hunkar-2,
+.page-kuliner.page-hunkar .section-hunkar-tech,
+.page-kuliner.page-sherbet .section-hunkar-tech,
+.page-kuliner.page-sup .section-hunkar-tech,
+.page-kuliner.page-hunkar .section-hunkar-3,
+.page-kuliner.page-sup .section-hunkar-3,
+.page-kuliner.page-hunkar .section-hunkar-4,
+.page-kuliner.page-sherbet .section-hunkar-4,
+.page-kuliner.page-sup .section-hunkar-4,
+.page-kuliner.page-hunkar .section-hunkar-5,
+.page-kuliner.page-sup .section-hunkar-5,
+.page-kuliner.page-hunkar .section-hunkar-6,
+.page-kuliner.page-sherbet .section-hunkar-6,
+.page-kuliner.page-sup .section-hunkar-6,
+.page-kuliner.page-hunkar .section-hunkar-7,
+.page-kuliner.page-sherbet .section-hunkar-7,
+.page-kuliner.page-sup .section-hunkar-7,
+.page-kuliner.page-hunkar .section-hunkar-8,
+.page-kuliner.page-sup .section-hunkar-8{
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+}
+
+/* HERO */
+.page-kuliner.page-hunkar .section-hunkar-hero,
+.page-kuliner.page-sherbet .section-hunkar-hero,
+.page-kuliner.page-sup .section-hunkar-hero{
+    min-height: 102vh;
+    height: auto;
+    padding-top: calc(var(--navbar-height, 72px) + 24px);
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+    padding-bottom: 52px;
+    display: flex;
+    align-items: stretch;
+}
+
+.page-kuliner.page-hunkar .hunkar-top-image,
+.page-kuliner.page-sherbet .hunkar-top-image,
+.page-kuliner.page-sup .hunkar-top-image{
+    width: 100%;
+    min-height: clamp(520px, 62vh, 720px);
+    border-radius: var(--kuliner-radius-xl);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(260px, 520px) 1fr;
+    align-items: end;
+    padding: 26px;
+    box-shadow: var(--kuliner-shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+    background:
+        radial-gradient(900px 520px at 0% 0%, rgba(255, 255, 255, 0.55), transparent 55%),
+        linear-gradient(120deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.08)),
+        var(--kuliner-hero-image) center/cover no-repeat;
+}
+
+.page-kuliner.page-hunkar .hunkar-top-image::before,
+.page-kuliner.page-sherbet .hunkar-top-image::before,
+.page-kuliner.page-sup .hunkar-top-image::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18px 18px, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        radial-gradient(circle at 54px 54px, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 74px 74px, 74px 74px;
+    background-position: 0 0, 18px 18px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.page-kuliner.page-hunkar .arrow-paket,
+.page-kuliner.page-sherbet .arrow-paket,
+.page-kuliner.page-sup .arrow-paket{
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.page-kuliner.page-hunkar .arrow-paket::before,
+.page-kuliner.page-sherbet .arrow-paket::before,
+.page-kuliner.page-sup .arrow-paket::before{
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
+.page-kuliner.page-hunkar .glass-box.hunkar-glass-box,
+.page-kuliner.page-sherbet .glass-box.hunkar-glass-box,
+.page-kuliner.page-sup .glass-box.hunkar-glass-box{
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 22px;
+    padding: 22px 22px 20px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.page-kuliner.page-hunkar .hunkar-hero-title,
+.page-kuliner.page-sherbet .hunkar-hero-title,
+.page-kuliner.page-sup .hunkar-hero-title{
+    margin: 0;
+    font-family: "Benne", serif;
+    font-size: clamp(34px, 4.6vw, 56px);
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-transform: none;
+}
+
+.page-kuliner.page-hunkar .glass-box.hunkar-glass-box p,
+.page-kuliner.page-sherbet .glass-box.hunkar-glass-box p,
+.page-kuliner.page-sup .glass-box.hunkar-glass-box p{
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.page-kuliner.page-hunkar .glass-bubble,
+.page-kuliner.page-sherbet .glass-bubble,
+.page-kuliner.page-sup .glass-bubble{
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 230px;
+    height: 230px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0.7;
+    pointer-events: none;
+    animation: kulinerFloat 7.5s ease-in-out infinite;
+}
+
+@keyframes kulinerFloat{
+    0%, 100%{ transform: translate(0, 0); }
+    50%{ transform: translate(-18px, 18px); }
+}
+
+/* SECTION WRAPS */
+.page-kuliner.page-hunkar .hunkar-detail-wrap,
+.page-kuliner.page-sherbet .hunkar-detail-wrap,
+.page-kuliner.page-sup .hunkar-detail-wrap,
+.page-kuliner.page-hunkar .hunkar-tech-wrap,
+.page-kuliner.page-sup .hunkar-tech-wrap,
+.page-kuliner.page-sherbet .hunkar-tools-wrap,
+.page-kuliner.page-hunkar .hunkar-tools-wrap,
+.page-kuliner.page-sup .hunkar-tools-wrap{
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* HISTORY / CULTURE cards */
+.page-kuliner.page-hunkar .section-hunkar-2,
+.page-kuliner.page-sherbet .section-hunkar-2,
+.page-kuliner.page-sup .section-hunkar-2{
+    padding-top: 56px;
+    padding-bottom: 28px;
+}
+
+.page-kuliner .hunkar-history-row{
+    display: flex;
+    gap: clamp(16px, 4vw, 44px);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--kuliner-radius-xl);
+    padding: clamp(16px, 3.2vw, 30px);
+    box-shadow: var(--kuliner-shadow-card);
+}
+
+.page-kuliner .hunkar-history-image,
+.page-kuliner .hunkar-culture-image{
+    width: min(420px, 42vw);
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.page-kuliner .hunkar-history-title,
+.page-kuliner .hunkar-culture-title,
+.page-kuliner .hunkar-tech-title,
+.page-kuliner .hunkar-bahan-title,
+.page-kuliner .hunkar-tools-title,
+.page-kuliner .hunkar-filosofi-title,
+.page-kuliner .kuliner-nutrition-title{
+    font-family: "Benne", serif;
+    color: var(--kuliner-accent);
+    letter-spacing: -0.01em;
+}
+
+.page-kuliner .hunkar-history-title,
+.page-kuliner .hunkar-culture-title{
+    margin: 0;
+    font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.page-kuliner .hunkar-history-text,
+.page-kuliner .hunkar-culture-text,
+.page-kuliner .hunkar-tech-text,
+.page-kuliner .hunkar-bottom-text,
+.page-kuliner .hunkar-filosofi-intro{
+    color: rgba(0, 0, 0, 0.72);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.page-kuliner .hunkar-bottom-text{
+    margin: 18px 8px 0;
+    max-width: 90ch;
+}
+
+/* TEKNIK card becomes "quote slab" */
+.page-kuliner .section-hunkar-tech{
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.page-kuliner .hunkar-tech-card{
+    border-radius: var(--kuliner-radius-xl);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background:
+        radial-gradient(900px 320px at 10% 0%, rgba(0, 0, 0, 0.05), transparent 55%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62));
+    padding: clamp(18px, 4vw, 44px);
+    box-shadow: var(--kuliner-shadow-card);
+}
+
+.page-kuliner .hunkar-tech-title{
+    font-size: clamp(26px, 3.4vw, 42px);
+    margin-bottom: 10px;
+}
+
+/* BUDAYA */
+.page-kuliner .section-hunkar-3{
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.page-kuliner .hunkar-culture-card{
+    display: flex;
+    gap: clamp(16px, 4vw, 44px);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.70);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--kuliner-radius-xl);
+    padding: clamp(16px, 3.2vw, 30px);
+    box-shadow: var(--kuliner-shadow-card);
+}
+
+/* BAHAN: turn into bold chips */
+.page-kuliner .section-hunkar-4{
+    padding-top: 38px;
+    padding-bottom: 30px;
+}
+
+.page-kuliner .hunkar-bahan-title{
+    margin: 0 0 18px;
+    font-size: clamp(30px, 4vw, 46px);
+}
+
+.page-kuliner .hunkar-bahan-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.page-kuliner .hunkar-bahan-card{
+    border-radius: 999px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 300ms cubic-bezier(.2,.8,.2,1);
+}
+
+.page-kuliner .hunkar-bahan-card:hover{
+    transform: translateY(-2px);
+}
+
+.page-kuliner .hunkar-bahan-card img{
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+}
+
+.page-kuliner .hunkar-bahan-card p{
+    margin: 0;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.78);
+}
+
+/* FILOSOFI: alternating cards */
+.page-kuliner .section-hunkar-5{
+    padding-top: 30px;
+    padding-bottom: 34px;
+}
+
+.page-kuliner .hunkar-filosofi-title{
+    margin: 0;
+    font-size: clamp(30px, 4vw, 52px);
+}
+
+.page-kuliner .hunkar-filosofi-intro{
+    margin: 10px 0 0;
+    max-width: 92ch;
+}
+
+.page-kuliner .hunkar-filosofi-grid{
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.page-kuliner .hunkar-filosofi-card{
+    border-radius: var(--kuliner-radius-lg);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.10);
+    padding: 14px 14px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    align-items: center;
+}
+
+.page-kuliner .hunkar-filosofi-card img{
+    width: 160px;
+    height: 120px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.page-kuliner .hunkar-filosofi-card-title{
+    margin: 0;
+    color: var(--kuliner-accent);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.page-kuliner .hunkar-filosofi-card-text{
+    margin: 6px 0 0;
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.page-kuliner .hunkar-filosofi-card.is-red{
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.70));
+    border-color: rgba(155, 27, 48, 0.16);
+}
+
+/* TOOLS / BENEFITS */
+.page-kuliner .section-hunkar-6{
+    padding-top: 26px;
+    padding-bottom: 34px;
+}
+
+.page-kuliner .hunkar-tools-wrap{
+    display: flex;
+    align-items: center;
+    border-radius: var(--kuliner-radius-xl);
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--kuliner-shadow-card);
+    padding: clamp(16px, 3.2vw, 30px);
+    gap: clamp(18px, 4vw, 42px);
+}
+
+.page-kuliner .hunkar-tools-title{
+    margin: 0 0 10px;
+    font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.page-kuliner .hunkar-tools-list{
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.page-kuliner .hunkar-tool-img{
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+/* SHERBET: gizi layout */
+.page-kuliner.page-sherbet .sherbet-gizi-card{
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: var(--kuliner-radius-xl);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--kuliner-shadow-card);
+}
+
+.page-kuliner.page-sherbet .sherbet-gizi-title{
+    color: var(--kuliner-accent);
+}
+
+/* STEPS */
+.page-kuliner .section-hunkar-7{
+    padding-top: 26px;
+    padding-bottom: 42px;
+}
+
+.page-kuliner .hunkar-step-wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.page-kuliner .hunkar-step-card,
+.page-kuliner .sup-cook-card{
+    border-radius: var(--kuliner-radius-xl);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--kuliner-shadow-card);
+    overflow: hidden;
+}
+
+.page-kuliner .hunkar-step-image,
+.page-kuliner .sup-cook-image{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.page-kuliner .hunkar-step-head{
+    padding: 16px 18px 0;
+}
+
+.page-kuliner .hunkar-step-kicker{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.62);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+}
+
+.page-kuliner .hunkar-step-title,
+.page-kuliner .sup-cook-title{
+    margin: 8px 0 0;
+    font-family: "Benne", serif;
+    color: var(--kuliner-accent);
+    font-size: clamp(26px, 3.2vw, 40px);
+}
+
+.page-kuliner .hunkar-step-list,
+.page-kuliner .sup-cook-list{
+    margin: 12px 0 0;
+    padding: 0 22px 22px;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.page-kuliner .hunkar-step-list li,
+.page-kuliner .sup-cook-list li{
+    margin-top: 8px;
+}
+
+/* NUTRITION */
+.page-kuliner .section-hunkar-8{
+    padding-top: 10px;
+    padding-bottom: 80px;
+}
+
+.page-kuliner .hunkar-table-wrap{
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--kuliner-radius-xl);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--kuliner-shadow-card);
+    padding: clamp(18px, 3.2vw, 30px);
+}
+
+.page-kuliner .kuliner-nutrition-title{
+    margin: 0;
+    font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.page-kuliner .kuliner-nutrition-note{
+    margin: 12px 0 0;
+    color: rgba(0, 0, 0, 0.62);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.page-kuliner .kuliner-meta-row{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+    .page-kuliner.page-hunkar .hunkar-top-image,
+    .page-kuliner.page-sherbet .hunkar-top-image,
+    .page-kuliner.page-sup .hunkar-top-image{
+        grid-template-columns: 1fr;
+        align-items: end;
+        padding: 18px;
+    }
+
+    .page-kuliner .hunkar-history-row,
+    .page-kuliner .hunkar-culture-card{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-kuliner .hunkar-tools-wrap{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-kuliner .hunkar-step-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    .page-kuliner .hunkar-history-image,
+    .page-kuliner .hunkar-culture-image{
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .page-kuliner .hunkar-filosofi-card{
+        grid-template-columns: 1fr;
+    }
+
+    .page-kuliner .hunkar-filosofi-card img{
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .page-kuliner.page-hunkar .glass-bubble,
+    .page-kuliner.page-sherbet .glass-bubble,
+    .page-kuliner.page-sup .glass-bubble{
+        animation: none;
+    }
+
+    .page-kuliner .hunkar-bahan-card{
+        transition: none;
+    }
+}

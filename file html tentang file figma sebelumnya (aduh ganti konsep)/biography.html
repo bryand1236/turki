@@ -1,0 +1,390 @@
+﻿<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>website turki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Benne&family=Poppins&family=Aladin:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-biography.css">
+  </head>
+  <body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-turkiye-red">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">
+      <img src="../image/navbar.png" alt="Logo" class="d-inline-block align-text-bottom" >
+      Türkiye
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../home.html">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informasi</a>
+          <ul class="dropdown-menu dropdown-menu-center">
+            <li><a class="dropdown-item" href="../nyam.html">Kuliner Turki</a></li>
+            <p class ="dropdown-item-description">Jelajahi Makanan & Minuman Turki</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../biography.html">Orang Turki</a></li>
+            <p class ="dropdown-item-description">Tokoh dengan peran penting di sejarah Turki</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../culture.html">Budaya</a></li>
+            <p class ="dropdown-item-description">Seni, tradisi, dan kebiasaan</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../nature.html">Alam</a></li>
+            <p class ="dropdown-item-description">Bentang alam dan geografi</p>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../global-values.html">Global Values</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../destinasi/destinasi.html">Destinasi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../about.html">Tentang Kami</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="sec-index" id="biography">
+
+  <div class="title-container">
+    <p class="title">Burak Ã–zdemir </p>
+  </div>
+
+  
+  <div class="glass-box"></div>
+  
+    <div class="carousel-container" id="carouselContainer">
+      <div class="carousel-wrapper" id="carouselWrapper">
+
+        <div class="white-box" id="Image1">
+          <img class="image-person"src="image/placeholder.jpeg" alt="">
+          <p class="title-person burak">Burak Ã–zdemir</p>
+        </div>
+        
+        <div class="white-box" id="Image1">
+          <img class="image-person"src="image/placeholder.jpeg" alt="">
+          <p class="title-person abidin">Abidin Dino</p>
+        </div>
+
+        <div class="white-box" id="Image1">
+          <img class="image-person"src="image/placeholder.jpeg" alt="">
+          <p class="title-person ozalp">Ã–zalp BabaoÄŸlu</p>
+        </div>
+        
+        <div class="white-box" id="Image1">
+          <img class="image-person"src="image/placeholder.jpeg" alt="">
+          <p class="title-person ergun">Ergun Berksoy</p>
+        </div>
+
+        <div class="white-box" id="Image1">
+          <img class="image-person"src="image/placeholder.jpeg" alt="">
+          <p class="title-person suleyman">Süleyman Demirel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const carouselContainer = document.getElementById('carouselContainer');
+  const carouselWrapper = document.getElementById('carouselWrapper');
+  const biographySection = document.getElementById('biography');
+  window.currentSlideIndex = 0;
+  let currentSlide = 0;
+
+  // Data untuk masing-masing slide
+  const slideData = [
+    { 
+      title: 'Burak Ã–zdemir', 
+      desc: 'Burak Ã–zdemir (CZN Burak), lahir 24 Maret 1994 di Turki, adalah chef populer yang dikenal dengan senyum ikoniknya saat memasak. Mewarisi bakat dari ayahnya, Ismail Ã–zdemir, ia memulai karier di restoran keluarga sebelum akhirnya mendirikan restoran sendiri, Hatay Medeniyetler Sofrasi. Berkat kesuksesan kontennya di media sosial, Burak kini memiliki cabang restoran di Turki hingga ekspansi internasional ke Dubai, yang diresmikan bersama Pangeran Fazza. Hingga kini, ia tetap menjaga kedekatan dengan keluarganya sembari mempromosikan kuliner khas Turki ke dunia.',
+      bgImage: 'image/placeholder.jpeg'
+    },
+    { 
+      title: 'Abidin Dino', 
+      desc: 'Adalah pionir seni modern Turki yang dikenal melalui gaya abstrak dan kritik sosialnya. Ia merupakan pendiri "D Group", kelompok seniman yang mendobrak tradisi seni di Turki. Sepanjang hidupnya, Dino berpindah-pindah negara, mulai dari bekerja dengan sineas di Uni Soviet hingga berteman dengan Pablo Picasso di Prancis. Meski sering menghadapi pengasingan politik, pelarangan karya, dan penyakit parah, ia tetap konsisten menyuarakan pesan perdamaian dan kemanusiaan. Selain melukis, ia sukses menyutradarai film pemenang penghargaan, â€œGoal!â€ (1966). Ia wafat pada 1993 sebagai simbol keteguhan seniman yang tak bisa dibungkam oleh keadaan.',
+      bgImage: 'image/placeholder.jpeg'
+    },
+    { 
+      title: 'Ã–zalp BabaoÄŸlu', 
+      desc: 'Ã–zalp BabaoÄŸlu (lahir 11 Agustus 1952) adalah ilmuwan komputer Turki dan ACM Fellow yang merevolusi dunia teknologi melalui pengembangan Virtual Memory pada BSD Unix di UC Berkeley. Karya fundamentalnya memungkinkan perangkat lunak bekerja melampaui batas fisik memori, sebuah standar yang hingga kini menjadi jantung sistem operasi modern seperti macOS, iOS, dan Linux. Setelah sukses di Amerika, ia melanjutkan pengabdiannya sebagai profesor di University of Bologna, Italia, di mana ia terus meneliti sistem terdistribusi dan AI. Sosoknya menjadi teladan atas ketekunan riset yang mampu beradaptasi dari era komputer raksasa hingga teknologi digital masa kini.',
+      bgImage: 'image/placeholder.jpeg'
+    },
+    { 
+      title: 'Ergun Berksoy', 
+      desc: 'Ergun Berksoy (lahir 1943) adalah pengusaha internasional asal Turki yang sukses di sektor perhotelan, properti, dan ekspor. Ia merupakan pendiri jaringan Cesars Hotels di Turki dan pengembang destinasi wisata Cayman Crystal Caves di Grand Cayman. Dengan latar belakang keuangan yang kuat, ia dikenal sebagai sosok visioner yang berhasil mengekspansi investasinya secara global sambil aktif berkontribusi dalam kegiatan sosial dan olahraga.',
+      bgImage: 'image/placeholder.jpeg'
+    },
+    { 
+      title: 'Süleyman Demirel', 
+      desc: 'Deskripsi orang 5 akan muncul di sini',
+      bgImage: 'image/placeholder.jpeg'
+    }
+  ];
+
+  function updateSlideContent(animate = false) {
+    const titleEl = biographySection.querySelector('.title');
+    if (titleEl && slideData[currentSlide]) {
+      biographySection.style.transition = "background-image 0.4s ease-in";
+      biographySection.style.backgroundImage = `url(${slideData[currentSlide].bgImage})`;
+      if (animate) {
+        titleEl.classList.remove('exit', 'enter');
+        void titleEl.offsetWidth;
+        titleEl.classList.add('exit');
+        setTimeout(() => {
+          titleEl.innerText = slideData[currentSlide].title;
+          titleEl.classList.remove('exit');
+          titleEl.classList.add('enter');
+        }, 400);
+      } else {
+        titleEl.innerText = slideData[currentSlide].title;
+      }
+    }
+  }
+
+  // Tambahkan click listener ke setiap white-box
+  const whiteBoxes = carouselWrapper.querySelectorAll('.white-box');
+  
+  whiteBoxes.forEach((box, index) => {
+    box.addEventListener('click', () => {
+      // Jika klik slide yang sedang aktif, kembali ke slide sebelumnya
+      if (currentSlide === index && currentSlide > 0) {
+        currentSlide--;
+      } else {
+        currentSlide = index;
+      }
+      carouselWrapper.style.transition = 'transform 0.4s ease-out';
+      carouselWrapper.style.transform = `translateY(${currentSlide * -190}px)`;
+      updateSlideContent(true);
+      window.currentSlideIndex = currentSlide;
+      updatePersonDesc(true);
+    });
+  });
+
+  // Inisialisasi awal
+  window.currentSlideIndex = 0;
+  updateSlideContent(false);
+  updatePersonDesc(false);
+  </script>
+</section>
+
+<section class="person-description" id="personDesc">
+  <div class="fade-in">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="line me-3"></div>
+      <p class="pplg title">Burak Ozdemir</p>
+      <div class="line ms-3"></div>
+    </div>
+
+      <div class="d-grid align-items-center justify-content-center">
+        <p class="biography-content ">Burak Ã–zdemir atau dikenal sebagai CZN Burak adalah seorang chef dan kreator konten asal Turki yang lahir di YayladaÄŸÄ± pada 24 Maret 1994. Ia mewarisi kemampuan memasak dari ayahnya dan sejak muda telah bekerja di restoran keluarga di Istanbul.</p>
+        <p class="biography-content mt-5">CZN Burak terkenal melalui video memasak di media sosial dengan senyum khas dan porsi makanan besar. Ia berhasil membuka restoran Hatay Medeniyetler SofrasÄ± di Istanbul serta beberapa cabang lain, termasuk cabang internasional di Dubai pada tahun 2020. Selain berkarier di dunia kuliner, ia juga aktif dalam kegiatan kemanusiaan di berbagai negara konflik.</p>
+        <p class="biography-content mt-5">Kesuksesan CZN Burak menjadikannya chef Turki yang dikenal dunia, tidak hanya karena bisnis kuliner dan popularitasnya, tetapi juga kepeduliannya terhadap sesama.</p>
+      </div>
+    
+  </div>
+</section>
+
+<script>
+const personDescData = [
+  {
+    title: 'Burak Ã–zdemir',
+    desc: [
+      'Burak Ã–zdemir atau dikenal sebagai CZN Burak adalah seorang chef dan kreator konten asal Turki yang lahir di YayladaÄŸÄ± pada 24 Maret 1994.',
+      'CZN Burak terkenal melalui video memasak di media sosial dengan senyum khas dan porsi makanan besar. Ia berhasil membuka restoran Hatay Medeniyetler SofrasÄ± di Istanbul serta beberapa cabang lain, termasuk cabang internasional di Dubai pada tahun 2020. Selain berkarier di dunia kuliner, ia juga aktif dalam kegiatan kemanusiaan di berbagai negara konflik.',
+      'Kesuksesan CZN Burak menjadikannya chef Turki yang dikenal dunia, tidak hanya karena bisnis kuliner dan popularitasnya, tetapi juga kepeduliannya terhadap sesama.'
+    ]
+  },
+  {
+    title: 'Abidin Dino',
+    desc: [
+      'Abidin Dino (1913â€“1993) adalah pelukis dan seniman modern asal Turki yang dikenal dengan gaya abstrak dan karya bertema sosial. Ia lahir di Istanbul dan sejak muda menekuni ilustrasi serta kartun.',
+      'Ia pernah tinggal di Eropa dan aktif dalam gerakan seni modern Turki dengan mendirikan kelompok â€œD Grubuâ€ pada 1933. Abidin juga bekerja di dunia film bersama Sergei Yutkevich serta bergaul dengan seniman dunia seperti Pablo Picasso. Karena karya-karyanya yang bernuansa sosial-politik, ia sempat diasingkan, namun tetap berkarya dan mengadakan pameran hingga tingkat internasional.',
+      'Abidin Dino dikenal sebagai seniman tangguh yang tidak menyerah pada tekanan politik. Ia dikenang sebagai tokoh penting seni modern Turki yang menyuarakan kemanusiaan melalui karya-karyanya.'
+    ]
+  },
+  {
+    title: 'Ã–zalp BabaoÄŸlu',
+    desc: [
+      'Ã–zalp BabaoÄŸlu adalah ilmuwan komputer asal Turki yang lahir di Ankara pada 11 Agustus 1952. Ia dikenal sebagai salah satu tokoh penting dalam pengembangan sistem operasi modern, khususnya dalam evolusi UNIX, serta dianugerahi gelar ACM Fellow pada tahun 2002 atas kontribusinya di bidang teknologi.',
+      'BabaoÄŸlu menempuh pendidikan di Amerika Serikat dan meraih gelar Ph.D. dari University of California, Berkeley pada 1981. Di sana, ia bergabung dengan Computer Systems Research Group (CSRG) dan berkontribusi besar dalam pengembangan UNIX, khususnya sistem virtual memory. Kontribusinya pada BSD Unix menjadi dasar penting bagi sistem operasi modern seperti macOS, iOS, dan Linux. Pada 1988, ia melanjutkan karier akademiknya sebagai profesor di University of Bologna, dengan fokus pada sistem terdistribusi dan komputasi awan.',
+      'Ã–zalp BabaoÄŸlu dikenal sebagai ilmuwan yang tekun dan visioner. Kontribusinya dalam sistem operasi tidak hanya berdampak pada masanya, tetapi juga menjadi fondasi teknologi digital modern. Ia menjadi contoh bahwa dedikasi dalam riset dapat menghasilkan inovasi yang bertahan lama dan berpengaruh secara global.'
+    ]
+  },
+  {
+    title: 'Ergun Berksoy',
+    desc: [
+      'Ergun Berksoy adalah seorang pengusaha internasional asal Ankara, Turki, yang lahir pada 17 Juni 1943. Ia dikenal sebagai tokoh bisnis yang sukses di berbagai bidang seperti ekspor, perhotelan, investasi properti, dan pariwisata. Dengan latar belakang pendidikan di bidang keuangan dari Academy of Economical & Commercial Sciences di Ankara, Berksoy memiliki dasar yang kuat untuk membangun karier bisnisnya hingga ke tingkat internasional.',
+      'Perjalanan kariernya dimulai dari bidang perencanaan dan real-estate, kemudian berkembang ke industri ekspor produk makanan Turki yang membawanya meraih berbagai penghargaan. Ia juga mendirikan beberapa hotel berbintang lima di Turki, seperti Cesars Resort Hotel di Antalya dan Cesars Temple De Luxe Hotel di Belek, yang turut mendukung kemajuan sektor pariwisata. Pada tahun 2003, ia memperluas investasinya ke Grand Cayman dengan mendirikan Seven Mile Beach Investments serta terlibat dalam pengembangan destinasi wisata Cayman Crystal Caves.',
+      'Secara keseluruhan, Ergun Berksoy merupakan sosok pengusaha visioner yang tidak hanya berfokus pada keuntungan bisnis, tetapi juga memberikan kontribusi dalam bidang olahraga dan kegiatan sosial. Keberhasilannya membangun usaha di berbagai negara menunjukkan dedikasi, kerja keras, dan kepemimpinan yang kuat. Hingga kini, ia dikenal sebagai tokoh yang berpengaruh dalam industri pariwisata dan investasi internasional.'
+    ]
+  },
+  {
+    title: 'Süleyman Demirel',
+    desc: ['Deskripsi orang 5 akan muncul di sini','','']
+  }
+];
+
+function updatePersonDesc(animate = false) {
+  const currentSlide = window.currentSlideIndex !== undefined ? window.currentSlideIndex : 0;
+  const personDescSection = document.getElementById('personDesc');
+  if (!personDescSection || !personDescData[currentSlide]) return;
+  
+  const titleEl = personDescSection.querySelector('.title');
+  const bioEls = personDescSection.querySelectorAll('.biography-content');
+  
+  if (!titleEl || bioEls.length === 0) return;
+  
+  if (animate) {
+    // fade title out
+    titleEl.style.transition = 'opacity 0.4s ease';
+    titleEl.style.opacity = '0';
+    
+    bioEls.forEach(el => {
+      el.style.transition = 'opacity 0.4s ease';
+      el.style.opacity = '0';
+    });
+    
+    setTimeout(() => {
+      titleEl.innerText = personDescData[currentSlide].title;
+      titleEl.style.opacity = '1';
+      bioEls.forEach((el, idx) => {
+        el.innerText = personDescData[currentSlide].desc[idx] || '';
+      });
+      
+      bioEls.forEach(el => {
+        el.style.opacity = '1';
+      });
+    }, 400);
+  } else {
+    // initial load: no animation
+    titleEl.innerText = personDescData[currentSlide].title;
+    bioEls.forEach((el, idx) => {
+      el.innerText = personDescData[currentSlide].desc[idx] || '';
+    });
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const sections = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Kalau masuk viewport â†’ fade in
+      entry.target.classList.add('is-visible');
+    } else {
+      // Kalau keluar viewport â†’ fade out lagi
+      entry.target.classList.remove('is-visible');
+    }
+  });
+}, { threshold: 0.1 }); // threshold bisa diatur seberapa banyak elemen terlihat
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+
+</script>
+
+<script>
+// hide navbar when scrolling down, show when scrolling up
+(function(){
+  let lastScroll = window.pageYOffset;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const current = window.pageYOffset;
+    if (current > lastScroll && current > 50) {
+      nav.classList.add('navbar-hidden');
+    } else {
+      nav.classList.remove('navbar-hidden');
+    }
+    lastScroll = current;
+  });
+})();
+</script>
+<footer class="footer">
+  <div class="d-flex row-1">
+    <div class="d-flex flex-column">
+      <div class="d-flex">
+      <img style="height: 70px; width: 70px;" src="../image/footer-item-2.png" alt="">
+      <p class="footer-title">Türkiye</p>
+      </div>
+      <p class="footer-title-description">Rasakan perpaduan Timur dan Barat dalam keindahan Turki.</p>
+    </div>
+      <div class="ms-5 d-flex gap-5">
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">INFORMASI</p>
+      
+      <a href="../home.html" class="footer-tab-items">Beranda</a>
+      <a href="../culture.html" class="footer-tab-items">Budaya</a>
+      <a href="../nature.html" class="footer-tab-items">Alam</a>
+      <a href="../global-values.html" class="footer-tab-items">Global Values</a>
+      <a href="../destinasi/destinasi.html" class="footer-tab-items">Destinasi</a>
+      </div>
+
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">TENTANG KAMI</p>
+      <a href="../about/about-pplg.html" class="footer-tab-items">PPLG</a>
+      <a href="../about/about-dkv.html" class="footer-tab-items">DKV</a>
+      <a href="../about/about-kuliner.html" class="footer-tab-items">Kuliner</a>
+      <a href="../about/about-perhotelan.html" class="footer-tab-items">Perhotelan</a>
+      <a href="../about/about-akuntansi.html" class="footer-tab-items">Akuntansi</a>
+      </div>
+    </div>
+
+    <div class="footer-right-container">
+      <img class="smk-logo" src="../image/footer-item-1.png" alt="">
+      <div class="d-flex flex-column">
+      <p class="footer-title-description ms-2">PROJEK SEKOLAH</p>
+      <p class="footer-title-description-metland ms-2">SMK METLAND</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="line-footer justify-content-center align-items-center"></div>
+  <p class="footer-title-description">&copy;2026 BRYAND LIAW SAN</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+
+
+
+

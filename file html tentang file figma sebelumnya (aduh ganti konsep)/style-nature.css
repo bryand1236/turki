@@ -1,0 +1,780 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #063E4B;
+    overflow-x: hidden; /* avoid slight right-scroll artifacts */
+}
+.section{
+    height: 200vh;
+    min-height: 100vh;
+}
+.sec-index{
+    background-image: url(image/hagia.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    box-sizing: border-box;
+    transition:filter 0.4s ease-in-out;
+    position: relative;
+    height: 100vh;
+}
+
+.sec-index::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+}
+
+
+.navbar-dark{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.navbar-brand{
+    font-size:22px;
+    margin-left: 30px;
+}
+.nav-link{
+    color: #aeaeae;
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+    border-bottom: #aeaeae transparent 0.5px;
+    display: inline-block;
+}
+
+.nav-link:hover{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.nav-link.active{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.navbar-nav{
+    gap: 50px;
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-left: -45px;
+}
+
+.dropdown-item{
+    color: white;
+    font-size: 18px;
+}
+
+.dropdown-item:hover{
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.dropdown-item-description{
+    color: #aeaeae;
+    font-size: 10px;
+    max-width:100px;
+    justify-content:center;
+    margin: auto;
+}
+
+.footer-text{
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    text-align: center;
+}
+
+.title{
+    color: white;
+    list-style-type: none;
+    padding-left: 60px;
+    padding-top:300px;
+    font-size: 100px;
+}
+
+h1{
+    font-family: 'Benne', serif;
+}
+
+.title{
+    font-family: 'Benne', serif;
+    padding-top: 150px
+}
+
+.description{
+    color: white;
+    list-style-type: none;
+    padding-left: 55px;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+}
+
+
+
+/* Ensure foreground text sits above the overlay */
+.title,
+.description,
+h1{
+    position: relative;
+    z-index: 2;
+}
+
+/* Animasi slide out up untuk text yang keluar */
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+}
+
+/* Animasi slide in up untuk text yang masuk dari bawah */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title.exit {
+    animation: slideOutUp 0.4s ease-in forwards;
+    opacity: 0;
+}
+
+.title.enter {
+    animation: slideInUp 0.4s ease-out forwards;
+}
+.explore{
+    top: 400px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #D99180;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins';
+    position:absolute
+}
+
+.carousel-container {
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    height: 550px;
+    width: 500px;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 0.4s ease-out;
+    gap: 30px;
+}
+
+.image{
+    height: 450px;
+    width: 380px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 5px solid white;
+}
+
+.image2{
+    height: 350px;
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 0px solid white;
+    transition: all 0.4s ease-out;
+}
+
+.image2.active{
+    height: 450px;
+    width: 380px;
+    border: 5px solid white;
+    padding-left: 0px;
+}
+
+.image:not(.active){
+    height: 350px;
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 30px;
+ 
+    border: 0px solid white;
+    transition: all 0.4s ease-out;
+}
+.footer{
+    height: 200px;
+}
+
+
+/* bagian home */
+.turkey-image{
+    height: 700px;
+    width: 1200px;
+    display: flex;
+    flex-shrink:0;
+    border-radius: 80px;
+}
+
+.carousel-container-home{
+    height: 700px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    margin-top:100px;
+    overflow:hidden
+}
+.carousel-wrapper-home{
+    height: 700px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    gap:50px
+}
+
+.map{
+    height: 400px;
+    width: 900px;
+    top: 140px;
+    margin:auto;
+    display: flex;
+}
+
+.home{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 100px;
+    color: #063E4B;
+    font-family: "benne", "serif";
+}
+
+.description-home{
+    color: #8B0000;
+    padding-left: 55px;
+    font-size: 25px;
+    max-width: 1200px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+    margin: auto;
+    margin-top:30px
+}
+
+
+
+/* bagian culture */
+.culture{
+    padding-left: 190px;
+    padding-top: 130px;
+    font-size: 100px;
+    color: #8B0000;
+    font-family: "benne", "serif";
+}
+
+.description-culture{
+    color: #8B0000;
+    list-style-type: none;
+    padding-left: 55px;
+    font-size: 30px;
+    max-width: 650px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+}
+
+.carousel-container-culture{
+    height: 700px;
+    width: 721px;
+    margin-left:800px;
+    margin-top:-400px;
+    display: flex;
+    overflow:hidden;
+}
+
+.carousel-wrapper-culture{
+    height: 700px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    gap: 20px;
+}
+
+.culture-image{
+    height: 400px;
+    width: 700px;
+    display: flex;
+    flex-shrink:0;
+    border-radius: 80px;
+}
+
+.sect-culture-2-image{
+    height: 500px;
+    width: 400px;
+    margin-left:150px;
+    margin-top:150px;
+}
+
+.sect-culture-3-image{
+    height: 230px;
+    width: 200px;
+    margin-left:100px;
+    margin-top:-120px;
+}
+
+.sect-culture-4-image{
+    height: 230px;
+    width: 200px;
+    margin-left:-200px;
+    margin-top:420px;
+    position:absolute;
+    z-index: 20;
+}
+
+.sect-culture-3-box{
+    height: 230px;
+    width: 400px;
+    background-color: white;
+    margin-left: 854px;
+    margin-top: 150px;
+    position: absolute;
+    z-index: 20;
+}
+
+.sect-culture-4-box{
+    height: 230px;
+    width: 400px;
+    background-color: white;
+    margin-left: 854px;
+    margin-top: 420px;
+    position: absolute
+}
+
+
+
+.image-description{
+    color: black;
+    max-width: 900px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+    margin-top:0px;
+    margin-left: 590px;
+    padding-left: 237.5px;
+    padding-top:169px;
+}
+
+.box-subtitle{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "poppins", serif;
+    padding-left: 20px;
+    max-width: 360px;
+}
+
+.image-title{
+    color: black;
+    font-size: 22px;
+    padding: 20px;  
+    padding-bottom:0px;
+    font-family: "poppins", serif;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.map-title{
+    padding-left: 130px;
+    padding-top: 50px;
+    font-size: 100px;
+    color: #8B0000;
+    font-family: "benne", "serif";
+}
+
+.peta-wisata{
+    height: 550px;
+    width: 1400px;
+    padding-left:130px ;
+    display: flex;
+}
+
+/* bagian nature */
+.fade-in{
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.6s linear, transform 0.6s linear;
+    opacity: 0.2;
+}
+.line{
+    flex: 1;
+    height: 3px;
+    background-color: #063E4B;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.sect-home-1{
+    height: 120vh;
+    width: 100%;
+    background-color: #063E4B;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+}
+.sect-home-no-gradient{
+    height: 150vh;
+    width: 100%;
+    background-color: #063E4B;
+    position: relative;
+}
+
+.sect-home-no-gradient-bentang{
+    height: 170vh;
+    width: 100%;
+    background-color: #063E4B;
+    position: relative;
+}
+
+.sect-home-2{
+    height: 120vh;
+    width: 100%;
+    background-color: #fcfcfc;
+    position: relative;
+}
+
+
+.title-nature-blue{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 80px;
+    color: #063E4B;
+    font-family: "benne", "serif";
+}
+.carousel-container-bentang-alam-top{
+    height: 500px;
+    width: 1200px;
+    display: flex;
+    margin: auto;
+}
+
+.carousel-wrapper-bentang-alam-top{
+    height: 500px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    gap: 160px;
+}
+
+.bentang-alam-description{
+    color: white;
+    font-size: 24px;
+    max-width: 500px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+    padding-left: 90px;
+    padding-top: 130px;
+}
+
+.bentang-alam-title{
+    color: white;
+    font-size: 40px;
+    font-family: "benne", "serif";
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: auto;
+}
+
+
+.bentang-alam-top{
+    height: 500px;
+    width: 1200px;
+    display: flex;
+    flex-shrink:0;
+    border-radius: 20px;
+    background-image: url(image/placeholder.jpeg);
+    background-size: 1200px 500px;
+}
+
+.center-top{
+    display: flex;
+    justify-content: center;
+    gap: 1150px;
+    margin-top: -280px;
+
+}
+
+.black-box{
+    height: 500px;
+    width: 550px;
+    background: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.white-box{
+    height: 600px;
+    width: 550px;
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px); 
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1); 
+    position: absolute;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.title-nature-white{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 100px;
+    color: white;
+    font-family: "benne", "serif";
+}
+
+.title-nature-white-wilayah{
+    text-align: end;
+    padding-top: 30px;
+    padding-right: 30px;
+    font-size: 80px;
+    color: red;
+    font-family: "benne", "serif";
+}
+
+
+
+.logo-nature{
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+}
+.logo-container{
+    display: flex;
+    gap: 430px;
+    justify-content: center;
+    margin-top: 120px;
+}
+.logo-title-container{
+    justify-content: center;
+    font-size: 30px;
+    display: flex;
+    gap: 340px;
+    margin-top:20px;
+    margin-left:-60px;
+    font-family: "benne", "serif";
+}
+.logo-title{
+    color: white;
+    font-size: 25px;    
+    font-family: "poppins", "serif";
+}
+.logo-title-udara{
+    color: white;
+    font-size: 25px;    
+    font-family: "poppins", "serif";
+    padding-left:40px
+}
+
+.logo-description-container{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.logo-description-container-2{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    margin-left: 30px;
+}
+.logo-description{
+    color: white;
+    font-size: 20px;    
+    font-family: "poppins", "serif";
+    max-width: 400px;
+    line-height: 1.5;
+}
+.section-2-footer{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+    color: white;
+    font-family: "poppins", "serif";
+}
+
+.sect-nature-letak-wilayah{
+    height: 260vh;
+    width: 100%;
+    background-color: #fcfcfc;
+    position: relative;
+    background-image: url(image/placeholder.jpeg);
+    background-size: cover;
+}
+
+.sect-nature-left-box{
+    height:260vh;
+    width: 130vh;
+    background-color: white;
+    box-sizing: border-box;
+    opacity: 0.2;
+    position:absolute;
+    z-index: 1;
+}
+.sect-nature-blue-box{
+    height:370px;
+    width: 550px;
+    background-color: #063E4B;
+    box-sizing: border-box;
+    margin-left: 150px;
+    margin-top: 100px ;
+    border-radius: 30px;
+    z-index: 20;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.letak-wilayah-title-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    width: 100%;
+    position:absolute;
+}
+.letak-wilayah-title{
+    color: white;
+    font-size: 40px;
+    font-family: "benne", "serif";
+}
+
+
+.letak-wilayah-description{
+    color: white;
+    font-size: 20px;
+    max-width: 400px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+    margin-top: 90px;
+}
+
+.carousel-container-bentang-alam{
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-wrapper-bentang-alam{
+    height: 600px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    gap: 200px;
+}
+
+
+
+
+.bentang-alam{
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    flex-shrink:0;
+    border-radius: 30px;
+    background-image: url(image/placeholder.jpeg);
+    background-size: 1200px 600px;
+}
+.arrow-btn {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    z-index: 200;
+}
+.arrow-btn:hover {
+    background-color: #ddd;
+}
+.arrow-btn-top {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    z-index: 200;
+}
+.arrow-btn-top:hover {
+    background-color: #ddd;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    gap: 1150px;
+    margin-top: 280px;
+    margin-left: -20px;
+    z-index: 500;
+
+}
+
+.section-4-footer{
+    justify-content: center;
+    margin: auto;
+    padding-top: 50px;
+    font-size: 30px;
+    max-width: 1200px;
+    color: white;
+    font-family: "poppins", "serif";
+}
+
+.infografis{
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    height: ;
+    width: ;
+}

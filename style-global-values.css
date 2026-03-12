@@ -1,0 +1,580 @@
+.section-global-values-1{
+    height:110vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 15vh
+}
+
+.section-global-values-2{
+    height:120vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 5vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-section-global-values{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-global-values-2 > .fade-in{
+    position: relative;
+    z-index: 1;
+}
+
+.section-global-values-3{
+    height:210vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 5vh;
+}
+
+.section-global-values-4{
+    height:120vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 15vh; 
+}
+
+.section-global-values-5{
+    height:120vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 15vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(image/global-values/mata-pencaharian-bottom-3.png) center/cover no-repeat;
+
+}
+
+.background-section-global-values-3{
+    height:210vh;
+    width:100%;
+    left:0;
+    position:absolute;
+    border-top-left-radius: 600px;
+    border-top-right-radius: 600px;
+    z-index: 0;
+}
+
+.global-values-image-section-1{
+    width:100%;
+    height:500px;
+    margin:auto
+}
+
+.pemerintahan-grid-top{
+    width:600px;
+    height:250px;
+    border-radius:20px ;
+}
+
+.pemerintahan-grid-bottom{
+    width:280px;
+    height:280px;
+    border-radius: 20px;
+}
+
+.title-pemerintahan{
+    color:#860000;
+    font-size:40px;
+    font-weight:bold;
+    margin-top:20vh;
+    margin-left:5vh
+}
+
+.description-pemerintahan{
+    color:black;
+    font-size:20px;
+    margin-top:0vh;
+    margin-left: 5vh;
+    max-width: 500px;
+    font-weight:500;
+    text-align:justify
+}
+
+.title-mata-pencaharian{
+    color:#860000;
+    font-weight: bold;
+    font-size: 40px;
+    align-self: center;
+    z-index: 2;
+    margin-top: 20vh;
+}
+
+.description-mata-pencaharian{
+    color:black;
+    font-size:16px;
+    z-index: 2;
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+.mata-pencaharian-card{
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    height:360px;
+    width:360px;
+    border-radius: 20px;
+    padding:5vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.mata-pencaharian-card img{
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.card-container-mata-pencaharian{
+    margin-top: 150px;
+    gap:60px;
+}
+
+.card-container-mata-pencaharian-bottom{
+    margin-top: 50px;
+    gap:60px;
+}
+
+.card-mata-pencaharian-title{
+    color:#860000;
+    font-weight:bold;
+    font-size:24px;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:3vh
+}
+
+.card-mata-pencaharian-description{
+    font-size: 15px;
+    margin-top:2vh
+}
+
+.image-suku-ras{
+    width:550;
+    height:500;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.image-suku-ras-right{
+    width:550;
+    height:500;
+    border-radius: 0px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    margin-top: 50px;
+    margin-left: auto;
+}
+
+.title-bahasa{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    margin-top:20vh;
+    margin-left:5vh
+}
+
+.description-bahasa{
+    color:white;
+    font-size:20px;
+    margin-top:0vh;
+    margin-left: 5vh;
+    max-width: 500px;
+    font-weight:500;
+    text-align: justify;
+}
+
+/* section showcase: pemerintahan / suku&ras / mata uang */
+.section-global-values-6.gv-showcase{
+    --gv-showcase-height: clamp(360px, 40vw, 460px);
+    min-height: 100vh;
+    height: auto;
+    padding-top: calc(var(--navbar-height, 72px) + 44px);
+    padding-bottom: 70px;
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+
+    background-color: #fbf6ee;
+    /* soft tint + stable full-width background */
+    background-image:
+        linear-gradient(rgba(251, 246, 238, 0.92), rgba(251, 246, 238, 0.82)),
+        url(image/global-values/bg-global-values-1.png);
+    background-size: cover, cover;
+    background-position: center, center bottom;
+    background-repeat: no-repeat, no-repeat;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gv-showcase-wrap{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(320px, 1.6fr) minmax(260px, 1fr);
+    gap: clamp(18px, 3vw, 34px);
+    align-items: center;
+    transition: grid-template-columns 520ms cubic-bezier(.2,.8,.2,1);
+}
+
+.gv-showcase-feature,
+.gv-showcase-rail{
+    height: var(--gv-showcase-height);
+}
+
+.gv-showcase-rail{
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.gv-card{
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 360ms cubic-bezier(.2,.8,.2,1), border-radius 560ms cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+}
+
+.gv-card--big{
+    width: 100%;
+    height: 100%;
+}
+
+.gv-card--small{
+    flex: 1 1 0;
+    min-width: clamp(120px, 10vw, 180px);
+    height: 100%;
+    cursor: pointer;
+    transition: transform 360ms cubic-bezier(.2,.8,.2,1), flex-grow 560ms cubic-bezier(.2,.8,.2,1), border-radius 560ms cubic-bezier(.2,.8,.2,1);
+    flex-grow: 1;
+}
+
+.gv-card--small.gv-card--expanded{
+    flex-grow: 2.35;
+}
+
+.gv-card--small.gv-card--collapsed{
+    flex-grow: 0.75;
+}
+
+.gv-showcase.gv-showcase--focus .gv-showcase-wrap{
+    grid-template-columns: minmax(92px, 0.35fr) minmax(560px, 2.65fr);
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--big{
+    border-radius: 44px;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--big .gv-card-overlay{
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--big .gv-card-media{
+    filter: saturate(0.95) contrast(0.95) brightness(0.96);
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small{
+    min-width: clamp(88px, 8vw, 140px);
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded{
+    flex-grow: 5.2;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--collapsed{
+    flex-grow: 1;
+    border-radius: 44px;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card.gv-card--collapsed .gv-card-media{
+    filter: saturate(0.92) contrast(0.92) brightness(0.90);
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small:hover{
+    transform: translateY(-2px);
+}
+
+.gv-card--small:hover{
+    transform: translateY(-4px);
+}
+
+.gv-card:focus{
+    outline: none;
+}
+
+.gv-card:focus-visible{
+    outline: 3px solid rgba(134, 0, 0, 0.35);
+    outline-offset: 4px;
+}
+
+.gv-card-media{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.01);
+    transition: transform 560ms cubic-bezier(.2,.8,.2,1), filter 560ms cubic-bezier(.2,.8,.2,1);
+    will-change: transform, filter;
+}
+
+.gv-card--small:hover .gv-card-media{
+    transform: scale(1.06);
+}
+
+.gv-card-overlay{
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 18px 18px 16px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.46);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    transition: opacity 420ms cubic-bezier(.2,.8,.2,1), transform 420ms cubic-bezier(.2,.8,.2,1), background-color 560ms cubic-bezier(.2,.8,.2,1);
+    will-change: opacity, transform;
+}
+
+.gv-card--small .gv-card-overlay{
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+}
+
+.gv-card--small.gv-card--expanded .gv-card-overlay{
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-overlay{
+    left: 26px;
+    right: 26px;
+    bottom: 22px;
+    padding: 24px 26px 22px;
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.34);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    column-gap: 18px;
+    row-gap: 8px;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-title,
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-divider{
+    grid-column: 1 / -1;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-title{
+    font-size: clamp(34px, 4.4vw, 56px);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-desc{
+    grid-column: 1;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: none;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-meta{
+    grid-column: 2;
+    margin-top: 0;
+    padding-left: 18px;
+    list-style: disc;
+    display: block;
+}
+
+.gv-showcase.gv-showcase--focus .gv-card--small.gv-card--expanded .gv-card-meta li::before{
+    content: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .gv-showcase-wrap,
+    .gv-card,
+    .gv-card--small,
+    .gv-card-media,
+    .gv-card-overlay{
+        transition: none !important;
+    }
+}
+
+.gv-card--small.gv-card--expanded:hover{
+    transform: translateY(-2px);
+}
+
+.gv-card-title{
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(28px, 3.2vw, 44px);
+    letter-spacing: -0.01em;
+}
+
+.gv-card-divider{
+    width: 220px;
+    height: 2px;
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 999px;
+}
+
+.gv-card-desc{
+    margin: 12px 0 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 70ch;
+}
+
+.gv-card-meta{
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.gv-card-meta li::before{
+    content: "• ";
+    color: rgba(255, 255, 255, 0.70);
+}
+
+@media (max-width: 992px){
+    .section-global-values-6.gv-showcase{
+        padding-top: calc(var(--navbar-height, 72px) + 24px);
+        padding-bottom: 54px;
+    }
+
+    .gv-showcase-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    .gv-showcase-feature,
+    .gv-showcase-rail{
+        height: auto;
+    }
+
+    .gv-showcase-feature{
+        min-height: 360px;
+    }
+
+    .gv-showcase-rail{
+        margin-top: 16px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 992px){
+    .section-global-values-1,
+    .section-global-values-2,
+    .section-global-values-3,
+    .section-global-values-4,
+    .section-global-values-5{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .background-section-global-values-3{
+        display: none;
+    }
+
+    .global-values-image-section-1{
+        height: auto;
+    }
+
+    .pemerintahan-grid-top{
+        width: 100%;
+        height: auto;
+    }
+
+    .pemerintahan-grid-bottom{
+        width: min(44vw, 220px);
+        height: min(44vw, 220px);
+    }
+
+    .title-pemerintahan{
+        margin-top: 6vh;
+        margin-left: 0;
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .description-pemerintahan{
+        margin-left: 0;
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .title-mata-pencaharian{
+        margin-top: 6vh;
+        font-size: clamp(28px, 6vw, 40px);
+        text-align: center;
+    }
+
+    .description-mata-pencaharian{
+        max-width: 100%;
+    }
+
+    .card-container-mata-pencaharian,
+    .card-container-mata-pencaharian-bottom{
+        margin-top: 40px;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mata-pencaharian-card{
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        padding: 24px;
+    }
+
+    .image-suku-ras,
+    .image-suku-ras-right{
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        border-radius: 20px;
+    }
+
+    .title-bahasa{
+        margin-top: 6vh;
+        margin-left: 0;
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .description-bahasa{
+        margin-left: 0;
+        font-size: 16px;
+        max-width: 100%;
+    }
+}

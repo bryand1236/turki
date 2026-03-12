@@ -1,0 +1,341 @@
+.section-about-top{
+    height:120vh;
+    padding-right:5vh;
+    padding-left:5vh;
+}
+
+.section-leader{
+    height:100vh;
+    background-color:#8B0000;
+    display: flex;
+}
+
+.sect-about{
+    height:170vh
+}
+
+.title-nature{
+    font-size: 40px;
+    color:#8B0000;
+    font-weight: bold;
+    max-width: 500px;
+    flex-shrink: 0;
+}
+
+.description-nature{
+    font-size: 20px;
+    color: black;
+    max-width: 600px;
+    flex-shrink: 0;
+}
+
+.text-nature-container{
+    display: flex;
+    flex-direction: column;
+    margin-top:30vh;
+    margin-left:10vh;
+    flex-shrink: 0;
+}
+
+.nature-image-container{
+    display: flex;
+    margin-top: 20vh;
+    align-items: bottom;
+    margin-left:15vh
+}
+
+.nature-image1{
+    height:500px;
+    width:500px;
+    margin-top: auto;
+    border-top-left-radius: 0px;
+    border-top-right-radius:80px;
+    border-bottom-left-radius:80px;
+    border-bottom-right-radius:0px;
+    object-fit:cover
+}
+
+.leader-title{
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.leader-text-container{
+    display: flex;
+    flex-direction: column;
+    margin-top:15vh;
+    margin-left:20vh;
+}
+
+.leader-description{
+    color:white;
+    font-size: 30px;
+    text-align:center;
+}
+
+.leader-role{
+    background-color: white;
+    border-radius: 15px;
+    width: 250;
+    height: 90px;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+}
+
+.leader-task{
+    color:black;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 22px;
+}
+
+.leader-profile-picture{
+    border-radius: 50%;
+    height:450px;
+    width: 450px;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-left:40vh;
+    margin-top:15vh
+}
+
+@media (max-width: 992px){
+    .section-about-top,
+    .section-leader,
+    .sect-about{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        padding-top: 12vh;
+        padding-bottom: 6vh;
+    }
+
+    .text-nature-container{
+        margin-left: 0;
+        margin-top: 6vh;
+    }
+
+    .nature-image-container{
+        margin-left: 0;
+        margin-top: 4vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nature-image1{
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+    }
+
+    .leader-text-container{
+        margin-left: 0;
+        margin-top: 6vh;
+    }
+
+    .leader-title{
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .leader-description{
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .leader-role{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .leader-profile-picture{
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        border-width: 3px;
+    }
+}
+
+/* about.html: pills + profile cards */
+.section-bentang-alam-3{
+    --ba-accent: #8B0000;
+    min-height: 100vh;
+    height: auto;
+    padding-top: calc(var(--navbar-height, 72px) + 44px);
+    padding-bottom: 64px;
+    padding-left: clamp(18px, 4vw, 70px);
+    padding-right: clamp(18px, 4vw, 70px);
+}
+
+.ba-team-wrap{
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.ba-team-banner{
+    position: relative;
+    width: 100%;
+    height: clamp(240px, 34vw, 340px);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.ba-team-banner-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.05) contrast(1.02);
+}
+
+.ba-team-banner::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.48));
+    pointer-events: none;
+}
+
+.ba-team-tabs{
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: calc(100% - 24px);
+}
+
+.ba-tab{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.82);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.ba-tab:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.ba-tab.is-active{
+    background: var(--ba-accent);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.ba-tab-icon{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.ba-team-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.ba-pane{
+    display: none;
+    width: 100%;
+    scroll-margin-top: calc(var(--navbar-height, 72px) + 24px);
+}
+
+.ba-pane.is-active{
+    display: block;
+}
+
+.ba-profile-card{
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 18px 16px 16px;
+    text-align: center;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.14);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.ba-profile-card:hover{
+    transform: translateY(-8px);
+    border-color: rgba(0, 0, 0, 0.14);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.2);
+}
+
+.ba-avatar{
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--ba-accent);
+    display: block;
+    margin: 6px auto 10px;
+    background: #ffffff;
+}
+
+.ba-name{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.82);
+}
+
+.ba-badge{
+    display: inline-block;
+    margin: 10px auto 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ba-role{
+    margin: 0;
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: var(--ba-accent);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+@media (max-width: 992px){
+    .ba-team-banner{
+        height: clamp(220px, 50vw, 320px);
+    }
+}

@@ -1,0 +1,183 @@
+﻿<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>website turki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Benne&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-turkiye-red">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">
+      <img src="../image/navbar.png" alt="Logo" class="d-inline-block align-text-bottom" >
+      Türkiye
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../home.html">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informasi</a>
+          <ul class="dropdown-menu dropdown-menu-center">
+            <li><a class="dropdown-item" href="../nyam.html">Kuliner Turki</a></li>
+            <p class ="dropdown-item-description">Jelajahi Makanan & Minuman Turki</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../biography.html">Orang Turki</a></li>
+            <p class ="dropdown-item-description">Tokoh dengan peran penting di sejarah Turki</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../culture.html">Budaya</a></li>
+            <p class ="dropdown-item-description">Seni, tradisi, dan kebiasaan</p>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="../nature.html">Alam</a></li>
+            <p class ="dropdown-item-description">Bentang alam dan geografi</p>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../global-values.html">Global Values</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../destinasi/destinasi.html">Destinasi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../about.html">Tentang Kami</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home1" class="sect-destinasi-1">
+    <div class="d-flex align-items-center justify-content-center">
+      <p class="destination-home-title">Jelajahi Pesona Turki, dengan Sentuhan yang Profesional</p>
+    </div>
+  
+</section>
+
+<section class="sect-culture">
+    <div class="fade-in">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="line me-3"></div>
+            <p class="pplg">Destinations</p>
+            <div class="line ms-3"></div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="destination-card">
+                <img class="destination-image" src="image/placeholder.jpeg" alt="Istanbul">
+                <p class="destination-name">Istanbul</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+
+
+
+
+
+<script>
+
+const sections = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Kalau masuk viewport â†’ fade in
+      entry.target.classList.add('is-visible');
+    } else {
+      // Kalau keluar viewport â†’ fade out lagi
+      entry.target.classList.remove('is-visible');
+    }
+  });
+}, { threshold: 0.1 }); // threshold bisa diatur seberapa banyak elemen terlihat
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+
+</script>
+
+<script>
+// hide navbar when scrolling down, show when scrolling up
+(function(){
+  let lastScroll = window.pageYOffset;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const current = window.pageYOffset;
+    if (current > lastScroll && current > 50) {
+      nav.classList.add('navbar-hidden');
+    } else {
+      nav.classList.remove('navbar-hidden');
+    }
+    lastScroll = current;
+  });
+})();
+</script>
+
+<footer class="footer">
+  <div class="d-flex row-1">
+    <div class="d-flex flex-column">
+      <div class="d-flex">
+      <img style="height: 70px; width: 70px;" src="../image/footer-item-2.png" alt="">
+      <p class="footer-title">Türkiye</p>
+      </div>
+      <p class="footer-title-description">Rasakan perpaduan Timur dan Barat dalam keindahan Turki.</p>
+    </div>
+      <div class="ms-5 d-flex gap-5">
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">INFORMASI</p>
+      
+      <a href="../home.html" class="footer-tab-items">Beranda</a>
+      <a href="../culture.html" class="footer-tab-items">Budaya</a>
+      <a href="../nature.html" class="footer-tab-items">Alam</a>
+      <a href="../global-values.html" class="footer-tab-items">Global Values</a>
+      <a href="../destinasi/destinasi.html" class="footer-tab-items">Destinasi</a>
+      </div>
+
+      <div class="d-flex flex-column ms-5">
+      <p class="footer-tab">TENTANG KAMI</p>
+      <a href="../about/about-pplg.html" class="footer-tab-items">PPLG</a>
+      <a href="../about/about-dkv.html" class="footer-tab-items">DKV</a>
+      <a href="../about/about-kuliner.html" class="footer-tab-items">Kuliner</a>
+      <a href="../about/about-perhotelan.html" class="footer-tab-items">Perhotelan</a>
+      <a href="../about/about-akuntansi.html" class="footer-tab-items">Akuntansi</a>
+      </div>
+    </div>
+
+    <div class="footer-right-container">
+      <img class="smk-logo" src="../image/footer-item-1.png" alt="">
+      <div class="d-flex flex-column">
+      <p class="footer-title-description ms-2">PROJEK SEKOLAH</p>
+      <p class="footer-title-description-metland ms-2">SMK METLAND</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="line-footer justify-content-center align-items-center"></div>
+  <p class="footer-title-description">&copy;2026 BRYAND LIAW SAN</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+

@@ -1,0 +1,537 @@
+.destinasi-feature-cta{
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    background-color: #8B0000;
+}
+
+.destinasi-feature-cta:hover{
+    transform: translateY(-2px);
+    background-color: #7a0000;
+}
+
+.destinasi-feature-cta-icon{
+    width: 14px;
+    height: 14px;
+    border-top: 3px solid rgba(255, 255, 255, 0.95);
+    border-right: 3px solid rgba(255, 255, 255, 0.95);
+    transform: rotate(45deg);
+    margin-left: -4px;
+}
+
+.destinasi-feature-cta--back{
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.destinasi-feature-cta--back:hover{
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+.destinasi-feature-cta--back .destinasi-feature-cta-icon{
+    transform: rotate(-135deg);
+    margin-left: 4px;
+}
+
+@media (max-width: 900px){
+    .destinasi-feature-cta--back{
+        left: 16px;
+        top: 16px;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+.section-destinasi-3{
+    height:350vh;
+    background-color: white;
+    padding-right: 5vh;
+    padding-left: 5vh;
+}
+
+.section-include-exclude{
+    height:80vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../image/cappadocia.avif) center/cover no-repeat;
+    padding-right: 45vh;
+    padding-left: 45vh;
+}
+
+.section-include-exclude-no-image{
+    height:80vh;
+    background-color:#860000; 
+    padding-right: 45vh;
+    padding-left: 45vh;
+    padding-top:15vh;
+}
+
+.section-rangkaian-perjalanan{
+    min-height:120vh;
+    background-color:#FDF5E6;
+    border-top: 4px solid #8d0000;
+    padding: 8vh 6vh 10vh;
+}
+
+.itinerary-wrapper{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.itinerary-title{
+    text-align: center;
+    color: #8d0000;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 7vh;
+}
+
+.itinerary-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 18px;
+}
+
+.itinerary-card{
+    background-color: #f1f1f1;
+    border: 3px solid #8d0000;
+    border-radius: 16px;
+    padding: 20px 18px;
+    min-height: 285px;
+}
+
+.itinerary-card-title{
+    margin: 0 0 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+}
+
+.itinerary-card-title-text{
+    display: inline-block;
+    padding-top: 1px;
+}
+
+.itinerary-icon{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.itinerary-item{
+    margin: 0;
+    font-size: 13px;
+    color: #222;
+    line-height: 1.3;
+}
+
+.itinerary-item + .itinerary-item{
+    margin-top: 2px;
+}
+
+@media (max-width: 1100px){
+    .itinerary-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px){
+    .section-rangkaian-perjalanan{
+        padding: 7vh 3vh 8vh;
+    }
+
+    .itinerary-title{
+        font-size: 32px;
+        margin-bottom: 4vh;
+    }
+
+    .itinerary-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+.section-peta-wisata{
+    height:170vh;
+    background-color:white;
+    padding-right: 5vh;
+    padding-left: 5vh;
+    padding-top:5vh;
+}
+
+.destinasi-grid-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+    margin-left: 10vh;
+}
+
+.pilihan-destinasi-image1{
+    width:270px;
+    height: 250px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 100px;
+    object-fit: cover;
+}
+
+.pilihan-destinasi-image2{
+    width:270px;
+    height: 250px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 0px;
+    object-fit: cover;
+}
+
+.pilihan-destinasi-image3{
+    width:270px;
+    height: 250px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 0px;
+    object-fit: cover;
+}
+
+.pilihan-destinasi-image4{
+    width:270px;
+    height: 250px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 80px;
+    object-fit: cover;
+}
+
+.destinasi-paket-nav{
+    margin-top: 12px;
+}
+
+.destinasi-btn-paket{
+    background-color: #8B0000 !important;
+    border-color: #8B0000 !important;
+    font-weight: 700;
+    border-radius: 999px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.destinasi-btn-paket:hover{
+    background-color: #7a0000 !important;
+    border-color: #7a0000 !important;
+}
+
+.destinasi-btn-paket-outline{
+    border-color: #8B0000 !important;
+    color: #8B0000 !important;
+    font-weight: 700;
+    border-radius: 999px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.destinasi-btn-paket-outline:hover{
+    background-color: rgba(139, 0, 0, 0.08) !important;
+    color: #8B0000 !important;
+}
+
+.exclude-container{
+    margin-left: 40vh;
+}
+
+.exclude-container p{
+    color:white;
+    font-weight: bold;
+    font-size:48px
+}
+
+.exclude-container li{
+    color:white;
+    font-size: 24px;
+}
+
+.include-exclude-container p{
+    color:white;
+    font-weight: bold;
+    font-size:48px
+}
+
+.include-exclude-container li{
+    color:white;
+    font-size: 24px;
+}
+
+.peta-wisata{
+    width:100%;
+    height:900px;
+    border-radius: 20px;
+    margin-top: 60px;
+    object-fit: cover;
+}
+
+.image-calendar{
+    height:2100px;
+    width:100%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+/* bagian paket pertama */
+
+.section-paket1-1{
+    height:120vh;
+    background-color:white;
+    padding-right: 10vh;
+    padding-left: 10vh;
+    padding-top: 15vh;
+}
+
+.section-paket1-2{
+    height:100vh;
+    background-color:white;
+    padding-right: 10vh;
+    padding-left: 10vh;
+    padding-top: 15vh;
+}
+
+.section-paket1-3{
+    background-color: white;
+    padding: 2vh 6vh 10vh;
+}
+
+.paket-harga-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 100px;
+    justify-content: center;
+}
+
+.paket1-top-image{
+    height:100vh;
+    width:100%;
+    background-image: url(../image/destinasi/paket1.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+}
+
+.paket2-top-image{
+    background-image: url(../image/destinasi/paket2.png);
+}
+
+.glass-box{
+    background: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px); 
+    border-radius:20px;
+    width:400px;
+    height:410px;
+    margin-top: 150px;
+    padding:5vh;
+    padding-top:3vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.glass-box p{
+    color:white
+}
+
+.paket1-title{
+    color:white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.glass-bubble{
+    background: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px); 
+    border-radius:20px;
+}
+
+.card-paket-harga{
+    width: 300px;
+    height: 98px;
+    border-radius:14px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 12px;
+    background-color: #fff;
+}
+
+.card-harga-head{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.harga-icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.icon-red{ background-color:#a60000; }
+.icon-blue{ background-color:#000f99; }
+.icon-green{ background-color:#148f00; }
+.icon-cyan{ background-color:#128b99; }
+.icon-brown{ background-color:#a05400; }
+.icon-purple{ background-color:#8a007e; }
+.icon-teal{ background-color:#0d7f9d; }
+
+.card-harga-title{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-harga-line{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    margin: 8px 0 4px;
+}
+
+.card-harga-nominal{
+    margin: 0;
+    font-size: 12px;
+}
+
+.wisata-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+}
+
+.wisata-grid-left{
+    justify-content: flex-start;
+}
+
+.wisata-card{
+    width: 350px;
+    min-height: 450px;
+    background: #fff;
+    border-radius: 14px;
+    border: 2px solid #efefef;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.wisata-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wisata-title{
+    margin: 10px 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+
+.wisata-desc{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #2f2f2f;
+}
+
+.wisata-price{
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
+    color: #333;
+}
+
+.wisata-divider{
+    background-color: rgba(0, 0, 0, 0.45);
+    width:100%;
+    height:2px;
+    margin: auto 0 10px;
+}
+
+@media (max-width: 992px){
+    .section-destinasi-3,
+    .section-peta-wisata{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .section-include-exclude,
+    .section-include-exclude-no-image{
+        height: auto;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        padding-top: 12vh;
+        padding-bottom: 6vh;
+    }
+
+    .destinasi-grid-container{
+        margin-left: 0;
+        margin-top: 6vh;
+        align-items: center;
+    }
+
+    .pilihan-destinasi-image1,
+    .pilihan-destinasi-image2,
+    .pilihan-destinasi-image3,
+    .pilihan-destinasi-image4{
+        width: min(42vw, 240px);
+        height: min(38vw, 220px);
+    }
+
+    .exclude-container{
+        margin-left: 0;
+        margin-top: 28px;
+    }
+
+    .include-exclude-container p,
+    .exclude-container p{
+        font-size: 34px;
+    }
+
+    .include-exclude-container li,
+    .exclude-container li{
+        font-size: 18px;
+    }
+
+    .peta-wisata{
+        height: auto;
+        margin-top: 24px;
+    }
+
+    .image-calendar{
+        height: auto;
+    }
+}

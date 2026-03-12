@@ -1,0 +1,2049 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    /* base pattern so rounded corners / gaps never show plain white */
+    background-image: var(--bg-pattern);
+    background-size: var(--bg-pattern-size);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-attachment: fixed;
+    /* prevent accidental horizontal scrolling caused by overflowing elements */
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* Put your pattern image here (recommended: image/pattern.png) */
+    --bg-pattern: url("image/bg-pattern.png");
+    --bg-pattern-size: contain;
+    --bg-pattern-opacity: 0.9;
+}
+
+/* Pattern background for all sections (can opt-out with .no-pattern) */
+section{
+    position: relative;
+    margin: 0;
+    display: flow-root; /* prevent margin-collapsing gaps between sections */
+}
+
+section::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg-pattern);
+    background-size: var(--bg-pattern-size);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-attachment: fixed;
+    opacity: var(--bg-pattern-opacity);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 768px){
+    section::after{
+        background-attachment: scroll;
+    }
+}
+
+section > *{
+    position: relative;
+    z-index: 1;
+}
+
+section.no-pattern::after,
+section.sec-index::after,
+section.section-home-hero::after,
+section.nav-alam::after,
+section.section-global-values-5::after,
+section.section-include-exclude::after,
+section.section-include-exclude-no-image::after,
+section.section-rangkaian-perjalanan::after,
+section.section-leader::after,
+section.section-hunkar-3::after,
+section.sect-about-2::after,
+section.sect-destinasi-1::after{
+    display: none;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hide dummy placeholder images so pages don't show filler graphics. */
+img[src$="placeholder.jpeg"]{
+    display: none !important;
+}
+
+/* =========================
+   Mobile Layout Safety Net
+   ========================= */
+
+@media (max-width: 992px){
+    /* Many pages used fixed vh heights; on mobile prefer natural height. */
+    section[class^="section-"],
+    section[class*=" section-"],
+    section[class^="sect-"],
+    section[class*=" sect-"]{
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Navbar spacing */
+    .navbar-brand{
+        margin-left: 12px;
+        font-size: 18px;
+    }
+
+    .navbar-brand img{
+        position: static;
+        height: var(--navbar-logo-height, 28px);
+    }
+
+    /* Google maps embed on destinasi/home: force iframe to fill its ratio wrapper */
+    .map-container iframe{
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Home: big image that uses negative margin on desktop */
+    .big-image-right{
+        margin-top: 24px !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 520px;
+        height: 340px !important;
+    }
+
+    /* Make long descriptions readable on mobile */
+    .description-home,
+    .nav-budaya-description,
+    .dropdown-item-description{
+        text-align: left !important;
+    }
+
+    /* Any 1200px-wide carousel blocks should not overflow */
+    .carousel-container-home,
+    .carousel-wrapper-home,
+    .carousel-container,
+    .carousel-wrapper{
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.section{
+    height: 200vh;
+    min-height: 100vh;
+}
+.sec-index{
+    background-size: 1920px 1080px;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sec-index::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(112deg, rgba(9, 24, 51, 0.58) 0%, rgba(20, 38, 72, 0.33) 42%, rgba(255, 255, 255, 0) 70%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0,0,0,0.42) 100%);
+    pointer-events: none;
+    
+}
+
+.hero-glass{
+    position: relative;
+    z-index: 3;
+    margin-left: 40px;
+    margin-top: 20vh;
+    width: min(56vw, 760px);
+    padding: 10px 28px 42px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(140deg, rgba(0, 0, 0, 0.2) 0%, rgba(15, 15, 15, 0.2) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar-dark{
+    background-color: #8B0000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* explicit red navbar class for consistency across pages */
+.navbar-turkiye-red{
+    background-color: #8B0000 !important;
+}
+
+/* lock navbar height so logo image size won't resize the bar */
+.navbar{
+    --navbar-height: 72px;
+    --navbar-logo-height: 28px;
+    min-height: var(--navbar-height);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar > .container-fluid{
+    min-height: var(--navbar-height);
+    align-items: center;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size:22px;
+    margin-left: 60px;
+}
+
+.navbar-brand img{
+    position: absolute;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    left:18;
+    height: 51;
+}
+
+
+
+/* hide navbar by translating upward and fading */
+.navbar-hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+
+.nav-link{
+    color: #aeaeae;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    border-bottom: #aeaeae transparent 0.5px;
+    display: inline-block;
+    
+}
+
+
+.nav-link:hover{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.nav-link.active{
+    color: white;
+    text-decoration: underline solid white 1.5px;
+    text-underline-offset: 10px;
+}
+
+.navbar-nav{
+    gap: 20px;
+}
+
+.navbar .nav-item.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    background-color: #8B0000;
+    text-align: center;
+    margin-left: 0;
+}
+
+.navbar .dropdown-menu.dropdown-menu-center{
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+}
+
+.dropdown-item{
+    color: white;
+    font-size: 18px;
+}
+
+.dropdown-item:hover{
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.dropdown-item-description{
+    color: #aeaeae;
+    font-size: 10px;
+    max-width:100px;
+    justify-content:center;
+    margin: auto;
+    text-align: center;
+}
+
+/* remove caret/arrow on dropdown toggles */
+.navbar .dropdown-toggle::after{
+    display: none;
+}
+
+.footer-text{
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    text-align: center;
+}
+
+.title{
+    color: white;
+    list-style-type: none;
+    font-family: 'poppins', serif;
+    font-size: 64px;
+}
+
+.title-container{
+    overflow: hidden;
+    margin-left: 60px;
+    margin-top: 20vh;
+    height: 100px
+}
+
+.description{
+    color: white;
+    list-style-type: none;
+    padding-left: 55px;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+}
+
+.sec-index .hero-glass .title-container{
+    margin: 0;
+    height: auto;
+}
+
+.sec-index .hero-glass .description{
+    padding-left: 0;
+    max-width: 100%;
+}
+
+
+
+/* Ensure foreground text sits above the overlay */
+.title,
+.description,
+h1{
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animasi slide out up untuk text yang keluar */
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        animation-duration: 200ms;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-120px);
+        animation-duration: 200ms;
+    }
+}
+
+/* Animasi slide in up untuk text yang masuk dari bawah */
+@keyframes slideInUp {
+    from {
+        opacity: 1;
+        transform: translateY(60px);
+        animation-duration: 200ms;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        animation-duration: 200ms;
+    }
+}
+
+.title.exit {
+    animation: slideOutUp 0.4s ease-in forwards;
+    opacity: 0;
+}
+
+.title.enter {
+    animation: slideInUp 0.4s ease-out forwards;
+}
+
+.text-fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.explore{
+    top: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #7BC2FC;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Poppins';
+    position:absolute;
+}
+
+.explore-2{
+    top: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #6DA1E4;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Poppins';
+    position:absolute
+}
+
+.explore-3{
+    top: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #5799CD;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Poppins';
+    position:absolute
+}
+
+.explore-4{
+    top: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #E4926A;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins';
+    position:absolute
+}
+
+
+.carousel-container {
+    position: absolute;
+    right: 0px;
+    top: 20vh;
+    height: 550px;
+    width: 500px;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 0.4s ease-out;
+    gap: 30px;
+}
+
+.image{
+    height: 450px;
+    width: 380px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.image2{
+    height: 350px;
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 0px solid white;
+    transition: all 0.4s ease-out;
+    object-fit: cover;
+}
+
+.image2.active{
+    height: 450px;
+    width: 380px;
+    border: 5px solid white;
+    padding-left: 0px;
+    object-fit: cover;
+}
+
+.image:not(.active){
+    height: 350px;
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 30px;
+ 
+    border: 0px solid white;
+    transition: all 0.4s ease-out;
+}
+
+
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* Do not force justify globally (keeps spacing readable). */
+
+.turkey-image{
+    height: 700px;
+    width: 1200px;
+    display: flex;
+    flex-shrink:0;
+    border-radius: 80px;
+}
+
+.carousel-container-home{
+    height: 700px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    margin-top:100px;
+    overflow:hidden
+}
+.carousel-wrapper-home{
+    height: 700px;
+    width: 1200px;
+    margin:auto;
+    display: flex;
+    gap:100px
+}
+
+/* bagian home */
+
+.section-home-1{
+    height: 100vh;
+    width: 100%;
+
+    position: relative;
+}
+
+.section-home-hero{
+    background-image: url('image/home/home-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: calc(var(--navbar-height, 72px) + 30px);
+    padding-bottom: 72px;
+    padding-left: clamp(18px, 6vw, 90px);
+    padding-right: clamp(18px, 6vw, 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.section-home-hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-home-hero .fade-in{
+    position: relative;
+    z-index: 1;
+}
+
+.home-hero-content{
+    width: min(900px, 100%);
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-hero-title{
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: clamp(26px, 3.2vw, 42px);
+    text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+}
+
+.home-hero-accent{
+    color: #8B0000;
+}
+
+.home-hero-subtitle{
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    font-size: clamp(12px, 1.2vw, 16px);
+    text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+}
+
+.home-hero-cta{
+    margin-top: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255,255,255,0.85);
+    color: #ffffff;
+    font-weight: 600;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.home-hero-cta:hover{
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,1);
+}
+
+.home-hero-scroll{
+    position: absolute;
+    left: 50%;
+    bottom: -150px;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.92);
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+    animation: homeScrollPulse 1.8s ease-in-out infinite;
+}
+
+.home-hero-scroll:hover{
+    background: rgba(255,255,255,0.10);
+    animation-play-state: paused;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+@keyframes homeScrollPulse{
+    0%, 100%{ opacity: 0.85; }
+    50%{ opacity: 1; transform: translateX(-50%) translateY(2px); }
+}
+
+#nav-alam{
+    scroll-margin-top: calc(var(--navbar-height, 72px) + 10px);
+}
+
+@media (max-width: 768px){
+    .section-home-hero{
+        padding-top: calc(var(--navbar-height, 72px) + 24px);
+        padding-bottom: 64px;
+    }
+
+    .section-home-hero .home-hero-glass{
+        width: 100%;
+        padding: 30px 26px;
+    }
+}
+
+.section-home-2{
+    height:140vh;
+    width:100%;
+    position: relative;
+}
+
+.section-home-3{
+    height: 200vh;
+    width: 100%;
+    background-color:white;
+    position: relative;
+}
+
+.home-gradient-zone{
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 84%,
+        rgba(184, 0, 0, 0.28) 94%,
+        #8B0000 100%
+    );
+}
+
+.home-gradient-zone .section-home-2,
+.home-gradient-zone .section-home-3{
+    background-color: transparent;
+}
+
+.footer{
+    background-color: #8B0000;
+    height: 100vh;
+
+}
+
+.title-home{
+    color: #8B0000;
+    font-size: 40px;
+    padding-top: 100px;
+    margin-left: 100px;
+    font-weight: bold;
+    max-width: 550px;
+}
+
+.description-home{
+    margin-left: 100px;
+    max-width: 570px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.explore-home{
+    margin-left:100px;
+    margin-top:30px;
+    width:150px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #8B0000;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.button-jelajahi{
+    color: white;
+    font-family: 'Poppins';
+    align-content: center;
+    margin:auto;
+    font-size: 20px;
+    font-weight:bold
+}
+
+.home-image{
+    height:500px;
+    width:600px;
+    margin-left:50px;
+    margin-top:100px;
+    border-radius: 20px;
+}
+
+.nav-alam{
+    height:85vh;
+    width:100%;
+    background-color:#8B0000;
+    border-radius: 30px;
+    /* overlap onto hero so rounded top shows home-image behind */
+    margin-top: -27px;
+    position: relative;
+    z-index: 2;
+     
+}
+
+.nav-alam-title{
+    color: white;
+    font-size: 40px;
+    padding-top: 100px;
+    margin-left: 50px;
+    font-weight: bold;
+    max-width: 500px;
+}
+
+.explore-alam{
+    margin-left:50px;
+    margin-top:10px;
+    width:200px;
+    height: 50px;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 15px;
+    border: none
+}
+
+.button-alam{
+    color: #000000;
+    align-content:center;
+    margin:auto;
+    font-size:22px;
+    font-weight:bold
+}
+
+.nav-alam-images{
+    margin-top:100px;
+    margin-left:100px;
+    gap: 30px;
+    display: flex;
+    position: relative;
+}
+
+.nav-alam-items{
+    height: 300px;
+    width: 250px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.nav-alam-items.up {
+    transform: translateY(-30px);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav-alam-description{
+    color: white;
+    position: relative;
+    margin-left:100px;
+    margin-top: 20px;
+}
+
+.map-container{
+    height: 600px;
+    width: 1200px;
+    margin-top: 100px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    background-color: #8B0000;
+    display: grid;
+
+}
+
+.googlemaps-title{
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.red-center-title{
+    color: #8B0000;
+    font-size: 60px;
+    font-family: "poppins", "serif";
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.nav-budaya{
+    height: 85vh;
+    width: 95%;
+    background-image: url(image/home/nav-budaya.png);
+    background-size: 100% 100%;
+    margin-top: 50px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right:auto;
+    animation: bgZoom 3s ease-in-out infinite;
+}
+
+@keyframes bgZoom {
+        0%   { background-size: 100% 100%; }
+        50%  { background-size: 110% 110%;
+               background-position: 30%; }
+        80%  { background-size: 108% 108%;
+               background-position: 80%; }
+        100% { background-size: 100% 100%;
+               background-position: 100%; }
+    }
+
+.explore-budaya{
+    height: 40px;
+    width:180px;
+    border-radius: 15px;
+    margin-top: 70vh;
+    margin-left: 5vh;
+    background-color: white;
+    border: none;
+}
+
+.nav-budaya-description{
+    margin-top:5vh;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right:auto;
+    font-size:16px;
+    text-align:left;
+    line-height: 1.6;
+}
+
+.nav-about-title{
+    color:#8B0000;
+    font-size: 50px;
+    font-weight: bold;
+    max-width: 800px;
+    margin-left: 10vh;
+
+}
+
+.explore-about{
+    background-color: #8B0000;
+    color: white;
+    width: 200px;
+    height: 50px;
+    margin-left:10vh;
+    border: none;
+    border-radius: 15px;
+}
+
+.grid-container-about{
+    display:flex;
+    margin-left:8vh;
+    margin-top:5vh;
+    gap: 30px;
+}
+
+.grid-container-about img{
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    display: flex; 
+    object-fit: cover;
+}
+
+.grid-container-about-item:hover img{
+    transform: translateY(-20px)
+}
+
+.grid-container-about-item{
+    position: relative;
+}
+
+.about-glassbox{
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(140deg, rgba(0, 0, 0, 0.55) 0%, rgba(15, 15, 15, 0.35) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.about-glassbox-text{
+    min-width: 0;
+    max-width: 320px;
+}
+
+.about-glassbox-title{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-glassbox-desc{
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.35;
+    opacity: 0.9;
+}
+
+.about-glassbox-arrow{
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.08);
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.grid-container-about a:hover .about-glassbox-arrow{
+    transform: translateX(2px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.about-glassbox--large{
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 18px 18px;
+}
+
+.about-glassbox--large .about-glassbox-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+.about-glassbox--large .about-glassbox-text{
+    max-width: 280px;
+}
+
+.big-image-right{
+    height: 140vh;
+    width: 400px;
+    margin-left: auto;
+    margin-right: 5vh;
+    margin-top: -140vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(image/home/pplg.png);
+    background-size: cover;
+    border-radius: 20px;
+    position: relative;
+
+    transition: all 0.5s ease;
+}
+
+.footer{
+    height:50vh;
+    background-color: #8B0000;
+}
+
+.row-1{
+    display: flex;
+    padding-left:10vh;
+    padding-right:10vh;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+.row-1 img{
+    height: 120px;
+    width:120px;
+}
+
+.row-2{
+    display: flex;
+    padding-left:15vh;
+    padding-right:15vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.footer-title{
+    color:white;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 36px;
+    margin-left: 10px;
+}
+
+.footer-title-description{
+    color:white;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-title-description-metland{
+    color:white;
+    margin-top: -80px;
+    margin-bottom: auto;
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 400px;
+    margin-left: 30px;
+}
+
+.smk-logo{
+    height:50px;
+    width: 50px;
+}
+
+.line-footer{
+    flex: 0;
+    height: 2px;
+    width:95%;
+    background-color: rgba(217, 217, 217, 0.5);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-tab{
+    color:white;
+    font-weight: bold;
+    font-size: 16px; 
+}
+
+.footer-tab-items{
+    color:white;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 3px;
+}
+
+.a{
+    text-decoration: none;
+}
+
+.footer-right-container{
+    display: flex;
+    margin-left: auto;
+}
+/* bagian culture */
+
+.section-culture-1{
+    height: 140vh;
+    width: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.section-culture-2{
+    height: 100vh;
+    width: 100%;
+    padding-left: 5vh;
+    padding-right:5vh;
+    background-color: white;
+    position: relative;
+}
+
+.section-culture-3{
+    height: 130vh;
+    width: 100%;
+    padding-left: 5vh;
+    padding-right:5vh;
+    background-color: white;
+    position: relative;
+}
+
+.section-culture-4{
+    height: 100vh;
+    width: 100%;
+    padding-left: 10vh;
+    padding-right:10vh;
+    background-color: white;
+    position: relative;
+}
+
+.budaya-image{
+    height: 100vh;
+    width: 95%;
+    background-image: url(image/culture/Mask\ group.png);
+    background-size: cover;
+    background-position: center;
+    margin-top: 20vh;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right:auto
+}
+
+.budaya-turki{
+    height:10vh;
+    width:20vh;
+    background-color:#8B0000;
+    border-radius: 10px;
+    border: 30px solid white;
+}
+
+.dance-image{
+    height: 500px;
+    width: 700px;
+    border-radius: 20px;
+    flex-shrink:0;
+}
+
+.warisan-budaya{
+    color: black;
+    font-size: 40px;
+    font-family: "poppins", "serif";
+    font-weight: bolder;
+    text-align: left;
+}
+
+.description-budaya{
+    color:black;
+    font-size:20px;
+    text-align: justify;
+    max-width: 500px;
+}
+
+.agama-turkey{
+    height: 90vh;
+    width: 100%;
+    border-radius: 30px;
+    background-image: url(image/culture/Frame\ 1408.png);
+    padding-left:65px;
+    padding-right:65px;
+    padding-top:40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.agama-title{
+    color:white;
+    font-size:40px;
+    font-weight: bold;
+    max-width: 500px;
+}
+
+.agama-description{
+    color:white;
+    font-size:15px;
+    max-width: 500px;
+    margin-left:auto;
+    line-height: 2;
+    text-align: justify;
+}
+
+.agama-container1{
+    background-color:white;
+    height: 300px;
+    width:350px;
+    border-radius: 15px;
+    border-top-right-radius: 60px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+.agama-container2{
+    background-color:white;
+    height: 300px;
+    width:350px;
+    border-radius: 15px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+.agama-container3{
+    background-color:white;
+    height: 300px;
+    width:350px;
+    border-radius: 15px;
+    border-top-left-radius: 60px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+.agama-icon{
+    height:60px;
+    width: 60px;
+}
+
+.nama-agama{
+    color:black;
+    text-align:center;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.description-agama{
+    color:black;
+    margin-top:5px;
+    text-align: justify;
+}
+.food-box{
+    height:130vh;
+    width:100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    background-color: white;
+}
+
+.red-center-title-food{
+    color: #8B0000;
+    font-size: 40px;
+    font-family: "poppins", "serif";
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.food-description{
+    color: black;
+    font-size: 20px;
+    max-width: 1000px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+    text-align: left;
+    margin-top: 30px;
+}
+
+.food-divider1{
+    height:100%;
+    width: 2px;
+    background-color: rgba(189, 9, 9, 0.5);
+    margin-left: 450 ;
+}
+
+.food-divider2{
+    height:100%;
+    width: 2px;
+    background-color: rgba(189, 9, 9, 0.5);
+    margin-left: 378 ;
+}
+
+.red-food-box{
+    background-color: #8B0000;
+    height:70vh;
+    width: 100%;
+    margin-top: auto;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.food-container{
+    position: absolute;
+    margin-top: 40vh;
+    display: flex;
+    gap:200px;
+}
+
+.food-container img{
+    height:200px;
+    width:215px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.food-image-description{
+    position: absolute;
+    margin-top: 75vh;
+    width:85%;
+    gap: 100px;
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.food-image-description p{
+    font-size: 16px;
+}
+
+.food-text{
+    max-width: 300px;
+    font-size: 20px;
+}
+
+.arrow{
+    height: 50px;
+    width: 50px;
+    background-image: url(image/placeholder.jpeg);
+    margin-top:60vh;
+    margin-left: 350px;
+}
+
+.tradisi-budaya{
+    align-self: center;
+    padding-top: 10vh;
+    display: flex;
+    gap: 50px;
+}
+
+.budaya-card{
+    height: 500px;
+    width:500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    overflow:hidden;
+    background-color: white;
+}
+
+.budaya-card img{
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;  
+    
+}
+
+.budaya-card:hover{
+    height: 500px;
+    width:500px;
+    margin-top:-20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    overflow:hidden;
+}
+
+.budaya-card-title{
+    font-weight: bold;
+    font-size:20px;
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.budaya-card-description{
+    font-size: 15px;
+    padding-left:20px;
+    padding-right:20px;
+    margin-top:-15px
+}
+/* bagian about */
+
+.sect-about{
+    height: 300vh;
+    width: 100%;
+    background-color: white;
+}
+
+.left-box-red{
+    height: 100vh;
+    width: 105vh;
+    background: rgba(164, 0, 1, 0.5);
+    position: absolute;
+}
+
+.sect-about-title{
+    margin-left: 200px;
+    margin-top: 190px;
+    font-size: 64px;
+    color: white;
+    font-family: 'poppins';
+    font-weight: bold;
+    position: absolute;
+}
+
+.sect-about-top{
+    height: 100vh;
+    background-image: url(image/placeholder.jpeg);
+    background-size: 100% 100vh;
+}
+
+.pplg{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 100px;
+    color: #8B0000;
+    font-family: 'benne';
+}
+
+.line{
+    flex: 1;
+    height: 3px;
+    background-color: #8B0000;
+}
+
+.person-card{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(111, 111, 111, 0.5);
+    border-radius: 30px;
+    height: 450px;
+    width: 300px;
+    transition: all 0.4s ease;
+}
+
+.person-card:hover{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(70, 70, 70, 0.9);
+    border-radius: 30px;
+    height: 450px;
+    width: 300px;
+    transform: translateY(-30px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.person-card-leader{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(111, 111, 111, 0.5);
+    border-radius: 30px;
+    height: 550px;
+    width: 350px;
+    transition: all 0.4s ease;
+}
+
+.person-card-leader:hover{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(70, 70, 70, 0.9);
+    border-radius: 30px;
+    height: 550px;
+    width: 350px;
+    transform: translateY(-30px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-container{
+    gap:100px;
+    margin-top:40px
+}
+
+
+
+.profile-picture{
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+    border: 2px solid #8B0000;
+    object-fit: cover;
+}
+
+.person-name{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.person-class{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.role{
+    background-color: #8B0000;
+    border-radius: 15px;
+    width: 70%;
+    height: 60px;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.role-perhotelan{
+    background-color: #8B0000;
+    border-radius: 15px;
+    width: 70%;
+    height: 90px;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.task{
+    color: white;
+    text-align: center;
+    padding-top: 17px;
+    font-size: 18px;
+}
+
+
+
+.person-name-leader{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.person-class-leader{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.role-leader{
+    background-color: #FFAE4B;
+    border-radius: 15px;
+    width: 70%;
+    height: 60px;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.role-leader-jovanka{
+    background-color: #FFAE4B;
+    border-radius: 15px;
+    width: 70%;
+    height: 90px;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.leader-title{
+    text-align: center;
+    color: #FFAE4B;
+    font-size: 20px;
+}
+
+.leader-icon{
+    height: 40px;
+    width: 40px;
+    margin-left:150px;
+
+}
+
+.sect-about-2{
+    height: 300vh;
+    width: 100%;
+    background-color: #8B0000;
+    position: relative;
+}
+
+.DKV{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 100px;
+    color: #ffffff;
+    font-family: 'benne';
+}
+
+
+.line-white{
+    flex: 1;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+/* bagian destinasi */
+
+.sect-destinasi-1{
+    height: 120vh;
+    width: 100%;
+    background-image: url(image/placeholder.jpeg);
+    background-size: cover;
+}
+
+.destination-home-title{
+    color: white;
+    margin-top:250px;
+    font-size:60px;
+    max-width: 1150px;
+}
+
+
+
+
+.destination-card{
+    background-color: #8B0000;
+    border: 3px solid rgba(111, 111, 111, 0.5);
+    border-radius: 30px;
+    height: 600px;
+    width: 400px;
+}
+
+/* bagian nom nom ak lapar */
+
+.nyam{
+    border-radius: 50%;
+    height: 150px;
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.nyam1{
+    border-radius: 50%;
+    height: 250px;
+    border: 35px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease; 
+}
+
+.carousel-container-nyam{
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+    height: 550px;
+    width: 500px;
+    overflow: hidden;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.carousel-wrapper-nyam{
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 0.4s ease-out;
+    gap: 30px;
+    justify-content: center;
+    margin: auto;
+    display: grid;
+}
+
+.left-box-nyam{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 765px;
+    width: 500px;
+    z-index: 1;
+    background: rgba(129, 124, 95, 0.7 );   
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(129, 124, 95, 0.1); 
+    padding: 20px;
+}
+
+.line{
+    flex: 1;
+    height: 3px;
+    background-color: #8B0000;
+}
+.pplg{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 100px;
+    color: #8B0000;
+    font-family: 'benne';
+}
+
+.line-white-vertical{
+    width: 3px;
+    height: 300px;
+    background-color: #ffffff;
+    margin-left: 150px;
+    position: relative;
+}
+
+.description-nyam{
+    color: white;
+    list-style-type: none;
+    padding-left: 55px;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.5;
+    font-family: "poppins", "serif";
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+/* =========================
+   Responsive (Tablet/Mobile)
+   ========================= */
+
+@media (max-width: 992px){
+    /* home */
+    .section-home-1,
+    .section-home-2,
+    .section-home-3{
+        height: auto;
+    }
+
+    .title-home{
+        margin-left: 0;
+        padding-top: 72px;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: clamp(28px, 6vw, 40px);
+        max-width: 100%;
+    }
+
+    .description-home{
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .explore-home{
+        margin-left: 0;
+    }
+
+    .home-image{
+        width: 100%;
+        max-width: 720px;
+        height: auto;
+        margin: 24px auto 0;
+        display: block;
+    }
+
+    .nav-alam{
+        height: auto;
+        padding: 6vh 3vh;
+        border-radius: 22px;
+    }
+
+    .nav-alam-title{
+        margin-left: 0;
+        padding-top: 0;
+        font-size: clamp(26px, 6vw, 40px);
+        max-width: 100%;
+    }
+
+    .explore-alam{
+        margin-left: 0;
+    }
+
+    .nav-alam-images{
+        margin: 24px 0 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .nav-alam-items{
+        width: min(220px, 100%);
+        height: 240px;
+    }
+
+    .nav-alam-description{
+        margin-left: 0;
+        margin-top: 18px;
+    }
+
+    .map-container{
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+        padding: 24px;
+    }
+
+    .red-center-title{
+        font-size: clamp(34px, 7vw, 60px);
+        margin-top: 60px;
+    }
+
+    .nav-budaya{
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        animation: none;
+        padding: 6vh 3vh;
+    }
+
+    .explore-budaya{
+        margin-top: 24px;
+        margin-left: 0;
+    }
+
+    .nav-budaya-description{
+        font-size: 14px;
+    }
+
+    .grid-container-about{
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        gap: 18px;
+    }
+
+    .grid-container-about img{
+        width: 100%;
+        height: auto;
+    }
+
+    .about-glassbox{
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 12px;
+    }
+
+    .about-glassbox-desc{
+        display: none;
+    }
+
+    /* culture */
+    .section-culture-1,
+    .section-culture-2,
+    .section-culture-3,
+    .section-culture-4{
+        height: auto;
+    }
+
+    .tradisi-budaya{
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 6vh;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .budaya-card,
+    .budaya-card:hover{
+        width: 100%;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .food-box{
+        height: auto;
+        padding-bottom: 6vh;
+        position: relative;
+    }
+
+    .food-description{
+        max-width: 100%;
+        font-size: 16px;
+        text-align: left;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .food-container{
+        position: static;
+        margin-top: 24px;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .food-container img{
+        height: 160px;
+        width: 160px;
+    }
+
+    .food-image-description{
+        position: static;
+        margin-top: 18px;
+        width: 100%;
+        gap: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+
+    .food-text{
+        max-width: none;
+    }
+
+    .red-food-box{
+        height: auto;
+        min-height: 260px;
+    }
+
+    .arrow{
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    /* footer */
+    .footer{
+        height: auto !important;
+        padding: 6vh 0 4vh;
+    }
+
+    .row-1{
+        flex-direction: column;
+        padding-left: 4vh;
+        padding-right: 4vh;
+        gap: 24px;
+    }
+
+    .footer .ms-5{
+        margin-left: 0 !important;
+    }
+
+    .footer .gap-5{
+        gap: 24px !important;
+        flex-wrap: wrap;
+    }
+
+    .footer-right-container{
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+
+    .footer-title{
+        font-size: 28px;
+    }
+
+    .footer-title-description{
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .footer-title-description-metland{
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px){
+    .nav-alam-items{
+        height: 200px;
+    }
+}
