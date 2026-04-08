@@ -38,22 +38,50 @@
   </div>
 
 <script>
-   let currentSlide = 0;
+  const slides = [
+    {
+      image: 'image/hagia.avif',
+      title: 'Hagia Sophia',
+      desc: 'Hagia Sophia adalah bangunan ikonik di Istanbul yang pernah berfungsi sebagai gereja, masjid, museum, dan sejak 2020 kembali menjadi masjid, sehingga menjadi simbol penting perubahan agama dan budaya di Turki.'
+    },
+    {
+      image: 'image/cappadocia.avif',
+      title: 'Cappadocia',
+      desc: 'Cappadocia (Kapadokia) adalah wilayah bersejarah di Anatolia Tengah, Turki, yang terkenal dengan bentang alam geologis unik hasil erupsi gunung berapi kuno.'
+    },
+    {
+      image: 'image/topkapi.jpg',
+      title: 'Topkapi Palace',
+      desc: 'Istana Topkapi (Topkapi Sarayi) adalah kompleks istana megah di Istanbul, Turki, yang menjadi pusat pemerintahan dan kediaman resmi Sultan Utsmaniyah selama hampir 400 tahun.'
+    },
+    {
+      image: 'image/ephesus.avif',
+      title: 'Ephesus',
+      desc: 'Efesus (Ephesus) adalah kota pelabuhan Yunani kuno yang sangat penting di pesisir Ionia, wilayah Turki barat modern dekat Selcuk, dan berkembang pesat pada masa Romawi.'
+    }
+  ];
+
+  let currentSlide = 0;
   const carouselContainer = document.getElementById('carouselContainer');
   const carouselWrapper = document.getElementById('carouselWrapper');
-  
-  // PERBAIKAN 1: Tambahkan titik (.) untuk querySelector class
   const exploreBtn = document.querySelector('.explore'); 
   const classes = ['explore', 'explore-2', 'explore-3', 'explore-4']; 
 
   function updateButtonClass() {
-    // PERBAIKAN 2: Hapus semua class lama dulu agar tidak tumpuk
     exploreBtn.classList.remove(...classes);
-    
-    // PERBAIKAN 3: Tambah class sesuai index slide saat ini
+
     if (classes[currentSlide]) {
       exploreBtn.classList.add(classes[currentSlide]);
     }
+  }
+
+  function updateCarouselPosition() {
+    const images = carouselWrapper.querySelectorAll('img');
+    const activeImage = images[currentSlide];
+    if (!activeImage) return;
+
+    carouselWrapper.style.transition = 'transform 0.4s ease-out';
+    carouselWrapper.style.transform = `translateX(-${activeImage.offsetLeft}px)`;
   }
 
   carouselContainer.addEventListener('click', (e) => {
@@ -68,10 +96,6 @@
     } else {
       currentSlide = Math.max(0, currentSlide - 1);
     }
-
-    carouselWrapper.style.transition = 'transform 0.4s ease-out';
-    carouselWrapper.style.transform = `translateX(${currentSlide * -330}px)`; 
-    
     updateActiveImage();
     updateButtonClass(); // Panggil fungsi ganti class tombol
   });
@@ -82,20 +106,13 @@
       img.classList.remove('active');
       if (index === currentSlide) img.classList.add('active');
     });
-    
-    const imageSources = ['image/hagia.avif', 'image/cappadocia.avif', 'image/topkapi.jpg', 'image/ephesus.avif'];
-    const slideTexts = [
-      { title: 'Hagia Sophia', desc: 'Hagia Sophia adalah bangunan ikonik di Istanbul yang pernah berfungsi sebagai gereja, masjid, museum, dan sejak 2020 kembali menjadi masjid, sehingga menjadi simbol penting perubahan agama dan budaya di Turki.' },
-      { title: 'Cappadocia', desc: 'Cappadocia (Kapadokia) adalahÂ wilayah bersejarah di Anatolia Tengah, Turki, yang terkenal dengan bentang alam geologis unik hasil erupsi gunung berapi kuno.' },
-      { title: 'Topkapi Palace', desc: 'Istana Topkapi (TopkapÄ± SarayÄ±) adalahÂ kompleks istana megah di Istanbul, Turki, yang berfungsi sebagai pusat pemerintahan dan kediaman resmi Sultan Utsmaniyah (Ottoman) selama hampir 400 tahun (1465â€“1856).Â ' },
-      { title: 'Ephesus', desc: 'Efesus (Ephesus) adalahÂ kota pelabuhan Yunani kuno yang sangat penting di pesisir Ionia (sekarang Turki barat dekat SelÃ§uk), yang berkembang pesat di bawah Kekaisaran Romawi.Â ' }
-    ];
 
     const section = document.getElementById('hagia-sophia');
     const titleEl = section.querySelector('.title');
     const descEl = section.querySelector('.description');
+    const activeSlide = slides[currentSlide];
 
-    if (titleEl && descEl && slideTexts[currentSlide]) {
+    if (titleEl && descEl && activeSlide) {
       descEl.style.transition = "opacity 0.4s ease, transform 0.4s ease";
       descEl.style.opacity = "0";
       descEl.style.transform = "translateY(30px)";
@@ -109,8 +126,8 @@
       titleEl.classList.add('exit');
       
       setTimeout(() => {
-        titleEl.innerText = slideTexts[currentSlide].title;
-        descEl.innerText = slideTexts[currentSlide].desc;
+        titleEl.innerText = activeSlide.title;
+        descEl.innerText = activeSlide.desc;
         titleEl.classList.remove('exit');
         titleEl.classList.add('enter');
         descEl.style.opacity = "1";
@@ -120,13 +137,16 @@
         exploreBtn.style.transform = "translateY(0px)";
       }, 400);
     }
+
+    requestAnimationFrame(updateCarouselPosition);
     section.style.transition = "background-image 0.4s ease-in";
-    section.style.backgroundImage = `url(${imageSources[currentSlide]})`;
+    section.style.backgroundImage = `url(${activeSlide.image})`;
   }
 
   // Inisialisasi awal
   updateActiveImage();
   updateButtonClass();
+  window.addEventListener('resize', updateCarouselPosition);
 </script>
 </section>
 
@@ -197,7 +217,6 @@
 
 
   
-
 
 
 

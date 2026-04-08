@@ -97,13 +97,36 @@
     </div>
 </section>
 
-<section class="video-ai d-flex flex-column align-items-center justify-content-center">
-  <p class="red-center-title">Perkenalan oleh Koki Turki Terkenal</p>
-<video width="600" height="600" style="margin-top: 100px;" controls>
+<div class="home-feature-band">
+  <article class="feature-card feature-card-video">
+    <div class="feature-card-copy">
+    
+      <h2 class="feature-title">Perkenalan oleh Koki Turki Terkenal</h2>
+      <p class="feature-description">Buka video singkat untuk melihat perkenalan yang lebih hidup dan personal.</p>
+    </div>
+    <button class="feature-preview feature-preview-video" type="button" id="videoAiTrigger" aria-label="Putar video perkenalan">
+      <video class="feature-video-thumb" muted playsinline preload="metadata">
         <source src="image/home/pengenalan ai burak for website.mp4" type="video/mp4">
         Perkenalan Tokoh!
-    </video>  
-</section>
+      </video>
+      <span class="feature-cta">Putar Video</span>
+    </button>
+  </article>
+
+  <article class="feature-card feature-card-ebook">
+    <div class="feature-card-copy">
+      
+      <h2 class="feature-title">Jelajahi E-Book Turkiye</h2>
+      <p class="feature-description">Lihat versi ringkasnya lalu buka e-book penuh dalam tampilan besar.</p>
+    </div>
+    <button class="feature-preview feature-preview-ebook" type="button" id="ebookTrigger" aria-label="Buka e-book Turkiye">
+      <div class="feature-ebook-thumb">
+        <iframe src="https://online.fliphtml5.com/txmsj/The-Land-Of-Turkiye-ebook/" title="Preview e-book Turkiye" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" tabindex="-1"></iframe>
+      </div>
+      <span class="feature-cta">Buka E-Book</span>
+    </button>
+  </article>
+</div>
 
 <section class="section-home-1">
   <div class="fade-in d-flex">
@@ -120,6 +143,19 @@
   </div>
 </section>
 
+<dialog class="video-ai-modal" id="videoAiModal">
+  <button class="video-ai-modal-close" type="button" id="videoAiClose" aria-label="Tutup video">x</button>
+  <video class="video-ai-modal-player" id="videoAiModalPlayer" controls playsinline preload="metadata">
+    <source src="image/home/pengenalan ai burak for website.mp4" type="video/mp4">
+    Perkenalan Tokoh!
+  </video>
+</dialog>
+
+<dialog class="video-ai-modal ebook-modal" id="ebookModal">
+  <button class="video-ai-modal-close" type="button" id="ebookClose" aria-label="Tutup e-book">x</button>
+  <iframe class="ebook-modal-frame" id="ebookModalFrame" src="https://online.fliphtml5.com/txmsj/The-Land-Of-Turkiye-ebook/" title="The Land Of Turkiye ebook" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+</dialog>
+
 <div class="home-gradient-zone">
 <section class="section-home-2">
   <div class="fade-in">
@@ -135,52 +171,50 @@
 
 <section class="section-home-3">
   <div class="fade-in">
-    <div class="d-flex flex-column">
-      <p class="nav-about-title">Satu Tim, Satu Visi, dengan Profesionalisme.</p>
+    <div class="home-about-layout">
+      <div class="home-about-main">
+        <p class="nav-about-title">Satu Tim, Satu Visi, dengan Profesionalisme.</p>
 
-      <div class="grid-container-about">
-        <a href="about/about-perhotelan.html">
+        <div class="grid-container-about">
+          <a href="about/about-perhotelan.html">
+            <div class="grid-container-about-item">
+              <img src="image/home/perhotelan.png" alt="Perhotelan">
+            </div>
+          </a>
+
+          <a href="about/about-kuliner.html">
           <div class="grid-container-about-item">
-            <img src="image/home/perhotelan.png" alt="Perhotelan">
+            <img src="image/home/kuliner.png" alt="Kuliner">
           </div>
         </a>
+        </div>
 
-        <a href="about/about-kuliner.html">
-        <div class="grid-container-about-item">
-          <img src="image/home/kuliner.png" alt="Kuliner">
+        <div class="grid-container-about mt-5">
+          <a href="about/about-akuntansi.html">
+            <div class="grid-container-about-item">
+              <img src="image/home/akuntansi.png" alt="Akuntansi">
+            </div>
+          </a>
+          <a href="about.html">
+            <div class="grid-container-about-item">
+              <img src="image/home/dkv.png" alt="DKV">
+            </div>
+          </a>
+        </div>
+
+        <p class="nav-budaya-description home-about-description">Kami tidak hanya belajar di dalam kelas, kami menciptakan ekosistem kerja nyata. Melalui Projek Kolaborasi antar jurusan, setiap jurusan memainkan peran krusial untuk melahirkan solusi yang profesional dan terintegrasi.</p>
+      </div>
+
+      <a class="home-about-side" href="about.html">
+        <div class="big-image-right">
+        
         </div>
       </a>
-      </div>
-
-      <div class="grid-container-about mt-5">
-        <a href="about/about-akuntansi.html">
-          <div class="grid-container-about-item">
-            <img src="image/home/akuntansi.png" alt="Akuntansi">
-          </div>
-        </a>
-        <a href="about.html">
-          <div class="grid-container-about-item">
-            <img src="image/home/dkv.png" alt="DKV">
-          </div>
-        </a>
-      </div>
     </div>
-
-    <a href="about.html">
-      <div class="big-image-right">
-      
-      </div>
-    </a>
-    <p class="nav-budaya-description">Kami tidak hanya belajar di dalam kelas, kami menciptakan ekosistem kerja nyata. Melalui Projek Kolaborasi antar jurusan, setiap jurusan memainkan peran krusial untuk melahirkan solusi yang profesional dan terintegrasi.</p>
   </div>
   
 </section>
 </div>
-
-
-<section class="e-book">
-  <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;"><iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/txmsj/The-Land-Of-Turkiye-ebook/" title="The Land Of Turkiye ebook" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe></div>
-</section>
 
 
 <footer class="footer">
@@ -231,6 +265,68 @@
 
 
 <script>
+
+const videoAiTrigger = document.getElementById('videoAiTrigger');
+const videoAiModal = document.getElementById('videoAiModal');
+const videoAiModalPlayer = document.getElementById('videoAiModalPlayer');
+const videoAiClose = document.getElementById('videoAiClose');
+const ebookTrigger = document.getElementById('ebookTrigger');
+const ebookModal = document.getElementById('ebookModal');
+const ebookClose = document.getElementById('ebookClose');
+
+if (videoAiTrigger && videoAiModal && videoAiModalPlayer && videoAiClose) {
+  videoAiTrigger.addEventListener('click', () => {
+    videoAiModal.showModal();
+    videoAiModalPlayer.currentTime = 0;
+    videoAiModalPlayer.play().catch(() => {});
+  });
+
+  videoAiClose.addEventListener('click', () => {
+    videoAiModalPlayer.pause();
+    videoAiModal.close();
+  });
+
+  videoAiModal.addEventListener('click', (event) => {
+    const rect = videoAiModal.getBoundingClientRect();
+    const insideDialog =
+      event.clientX >= rect.left &&
+      event.clientX <= rect.right &&
+      event.clientY >= rect.top &&
+      event.clientY <= rect.bottom;
+
+    if (!insideDialog) {
+      videoAiModalPlayer.pause();
+      videoAiModal.close();
+    }
+  });
+
+  videoAiModal.addEventListener('close', () => {
+    videoAiModalPlayer.pause();
+  });
+}
+
+if (ebookTrigger && ebookModal && ebookClose) {
+  ebookTrigger.addEventListener('click', () => {
+    ebookModal.showModal();
+  });
+
+  ebookClose.addEventListener('click', () => {
+    ebookModal.close();
+  });
+
+  ebookModal.addEventListener('click', (event) => {
+    const rect = ebookModal.getBoundingClientRect();
+    const insideDialog =
+      event.clientX >= rect.left &&
+      event.clientX <= rect.right &&
+      event.clientY >= rect.top &&
+      event.clientY <= rect.bottom;
+
+    if (!insideDialog) {
+      ebookModal.close();
+    }
+  });
+}
 
 const sections = document.querySelectorAll('.fade-in');
 
@@ -291,6 +387,3 @@ sections.forEach(section => {
 })();
 </script>
 </body>
-
-
-

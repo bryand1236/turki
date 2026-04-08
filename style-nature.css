@@ -88,6 +88,16 @@
     margin: auto;
 }
 
+@media (max-width: 992px){
+    .navbar-brand{
+        margin-left: 12px;
+    }
+
+    .navbar-collapse{
+        background-color: #063E4B;
+    }
+}
+
 /* bagian nature */
 
 .section-nature-1{
@@ -265,6 +275,7 @@
     padding-top: 10vh;
     border-radius: 20px;
 }
+
 
 .wilayah-title{
     color:white;

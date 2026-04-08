@@ -578,3 +578,8 @@
         max-width: 100%;
     }
 }
+
+/* normalize broken encoding fallback */
+.gv-card-meta li::before{
+    content: "- ";
+}
